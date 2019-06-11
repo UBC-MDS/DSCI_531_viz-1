@@ -25,15 +25,15 @@ You'll be evaluated as follows:
 
 | Assessment       | Weight  | Due Date         | Location | Covers | 
 |------------------|---------|------------------|----------|--------|
-| "Half Lab" Assignment 1 | 6%      | Saturday, Oct 13 at 18:00 | Submit to Github | Lec 1 |
-| Lab Assignment 2 | 12%     | Saturday, Oct 20 at 18:00 | Submit to Github | Lec 2-3 |
+| ["Half Lab" Assignment 1](release/lab1/lab1.ipynb) | 6%      | Saturday, Oct 13 at 18:00 | Submit to Github | Lec 1 |
+| [Lab Assignment 2](release/lab2/lab2.ipynb) | 12%     | Saturday, Oct 20 at 18:00 | Submit to Github | Lec 2-3 |
 | Quiz 1           | 20%     | Tuesday, Oct 23, 15:00-15:30   | Your lab room; submit to canvas | Lec 1-3, Lab 1-2 |
-| Lab Assignment 3 | 12%     | Saturday, Oct 27 at 18:00 | Submit to Github | Lec 4-5 |
-| Lab Assignment 4 | 12%     | Saturday, Nov 3 at 18:00     | Submit to Github | Lec 6-7 |
+| [Lab Assignment 3](release/lab3/lab3.Rmd) | 12%     | Saturday, Oct 27 at 18:00 | Submit to Github | Lec 4-5 |
+| [Lab Assignment 4](release/lab4/) | 12%     | Saturday, Nov 3 at 18:00     | Submit to Github | Lec 6-7 |
 | Quiz 2           | 20%     | Wed, November 7, 14:00 – 14:30 | Your DSCI 512 (Wednesday) lab rooms | Lec 4-8, Lab 3-4 |
-| Lec 8 Hackathon  | 6%      | Tuesday, Nov 6 at 18:00 | Submit to GitHub | NA |
-| Peer Review of Hackathon | 5% | ~~Friday~~ Wednesday, Nov 7 at 18:00 | Submit to GitHub | NA |
-| Participation    | 7%      | NA | NA | Seven lectures |
+| [Lec 8 Hackathon](release/hackathon/hackathon.md)  | 6%      | Tuesday, Nov 6 at 18:00 | Submit to GitHub | NA |
+| [Peer Review of Hackathon](release/peer_review/peer_review.md) | 5% | ~~Friday~~ Wednesday, Nov 7 at 18:00 | Submit to GitHub | NA |
+| [Participation](participation/participation.md)    | 7%      | NA | NA | Seven lectures |
 
 Tip: Use the lecture learning objectives as beacons when studying for your quizzes!
 
@@ -89,3 +89,8 @@ Other resource that you might find useful:
 ## Policies
 
 Please see the general [MDS policies](https://ubc-mds.github.io/policies/).
+
+## Licence
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
