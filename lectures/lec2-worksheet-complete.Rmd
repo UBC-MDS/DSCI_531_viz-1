@@ -1,0 +1,134 @@
+---
+title: "Lecture 2 Worksheet"
+output: github_document
+---
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+library(gapminder)
+students <- as_tibble(HairEyeColor) %>% 
+    uncount(n)
+```
+
+Note: `students` contains 592 observations of Hair, Eye, and Sex:
+
+```{r}
+students %>% 
+    sample_n(10)
+```
+
+# Finish 1- and 2- variable plots from last time
+
+## Bar plots
+
+__Uses of bar plots__: 
+
+1. Estimate probability mass functions / view frequencies of categories
+    - One categorical variable.
+2. Compare a single numeric response corresponding to different categories.
+    - One categorical, one (unique) numeric variable.
+
+What is the distribution of eye colour in `students`?
+
+```{r}
+ggplot(students, aes(Eye)) +
+    geom_bar()
+```
+
+| Grammar Component     | Specification |
+|-----------------------|---------------|
+| __data__              | `students` |
+| statistical transform | count |
+| __aesthetic mapping__ | x=Eye; y=count |
+| __geometric object__  | Bars |
+| scale                 | Linear count |
+| coordinate system     | Rectangular/Cartesian |
+| facetting             | None |
+
+How does the life expectancy of Canada, USA, and Mexico compare in 2007?
+
+```{r}
+(small_gap <- gapminder %>% 
+     filter(country %in% c("Canada", "United States", "Mexico"),
+            year == 2007) %>% 
+     select(country, lifeExp))
+ggplot(small_gap, aes(x=country, y=lifeExp)) +
+    geom_col()
+```
+
+| Grammar Component     | Specification |
+|-----------------------|---------------|
+| __data__              | `students` |
+| statistical transform | none |
+| __aesthetic mapping__ | x=country, y=lifeExp |
+| __geometric object__  | Bars |
+| scale                 | Linear |
+| coordinate system     | Rectangular/Cartesian |
+| facetting             | None |
+
+## Heatmaps
+
+__Use of heatmaps__: show dependence amongst two categorical variables.
+
+Example: Dependence amongst hair colour and eye colour in the `students` data.
+
+- Points? Jitter? No.
+- `geom_count()`?
+- `geom_bin2d()`!
+
+```{r}
+heat <- ggplot(students, aes(Hair, Eye))
+heat + geom_jitter()
+heat + geom_count()
+heat + geom_bin2d()
+```
+
+Fill in the grammar components:
+
+| Grammar Component     | Specification |
+|-----------------------|---------------|
+| __data__              | `students` |
+| statistical transform | count |
+| __aesthetic mapping__ | x=Hair, y=Eye; colour=count |
+| __geometric object__  | rectangles/squares |
+| scale                 | Linear count |
+| coordinate system     | Rectangular/Cartesian |
+| facetting             | None |
+
+# Three+ Variable Plots
+
+## Time/Line Plots
+
+__Uses of time/line plots__: 
+
+- Visualize trends of a numeric variable over time.
+
+Plot life expectancy over time for each country in `gapminder`.
+
+```{r}
+ggplot(gapminder, aes(year, lifeExp)) +
+    geom_line(aes(group=country, colour=continent), alpha=0.2)
+```
+
+| Grammar Component     | Specification |
+|-----------------------|---------------|
+| __data__              | `gapminder` |
+| statistical transform | none |
+|__aesthetic mapping__|x=year, y=lifeExp, group=country, colour=continent |
+| __geometric object__  | line |
+| scale                 | x and y both linear |
+| coordinate system     | Rectangular/Cartesian |
+| facetting             | None |
+
+Compare to __path plots__, for which the order matters:
+
+Add to the following scatterplot to see how Rwanda's life expectancy and GDP per capita evolved over time:
+
+```{r}
+gapminder %>% 
+    filter(country == "Rwanda") %>% 
+    arrange(year) %>% 
+    ggplot(aes(gdpPercap, lifeExp)) +
+    geom_point() +
+    geom_path(arrow=arrow())
+```

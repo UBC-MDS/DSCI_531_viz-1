@@ -1,0 +1,142 @@
+---
+title: "DSCI 531: Lab Assignment 3"
+output: github_document
+---
+
+Due Saturday.
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+library(gapminder)
+```
+
+## Assignment Objective
+
+This assignment is designed to give you practice making specialized plot types, and to get you thinking about effective and ineffective graphics.
+
+The assignment is to be completed in R.
+
+## Tidy Submission (worth 5%)
+
+rubric={mechanics:5}
+
+To get the marks for tidy submission:
+
+- Submit the assignment by filling in this jupyter notebook with your answers embedded
+- Be sure to follow the [general lab instructions](https://ubc-mds.github.io/resources_pages/general_lab_instructions/)
+- Do not include any code that installs packages (this is not good practice anyway)
+
+## Overall Publication-Quality (worth 5%)
+
+rubric={viz:5}
+
+To get these marks, your graphs must be publication quality. This means:
+
+- Axes should be labelled in English.
+- All text should be readable.
+- Not blurry
+- No overlapping text
+
+## Overall Code Quality (worth 10%)
+
+rubric={quality:10}
+
+To get these marks, your code should be high quality. See the [rubric](https://github.com/UBC-MDS/public/blob/master/rubric/rubric_quality.md) for details.
+
+## Exercise 1: Map of the world (worth 15%)
+
+rubric={accuracy:15}
+
+The function call `map_data("world")` returns a dataframe that encodes a map of the world. The `lat`, `long`, and `group` variables together specify the shape of each country, and the `region` variable gives each country's name. 
+
+Your task is to make a choropleth map of the world's countries using `map_data("world")`, indicating each country's life expectancy by the fill colour, using the `gapminder` data set found in the `gapminder` package. Use only the most recent year of the gapminder data. 
+
+Unfortunately, our two dataframes name the countries differently, for example "USA" and "United States", which makes joining these data frames a bit tricky. Use the function `countrycode::countrycode(x, "country.name", "iso2c")` to convert each country's name to its two-letter standard ISO country code, like "US".
+
++ Note: Here, `x` is either `country` or `region`.
++ Create a new column named `ISO` to store these codes.
+
+Use `left_join(by = "ISO")` to join the two data frames by your newly-created column and create a new data frame. Glimpse the resulting data frame.
+
+
+## Exercise 2: Other Specialized Graphs (worth 23%)
+
+### 2.1
+
+rubric={accuracy:15}
+
+Make one of the following:
+
+- A graph using a function from `GGally`.
+- A wordcloud.
+- A raster map using `ggmap`, with other data overlayed.
+    - Consider the `ggmap::crime` data.
+- A network diagram.
+
+Use data of your choice, but don't use a toy data set (_i.e._, don't use data that you can write up from nothing).
+
+### 2.2
+
+rubric={reasoning:8}
+
+What does the graph tell you, if anything? Tell us the big-picture idea in one or two brief sentences. 
+
+__Hint__: as in lab 2, there's no need to fish for minutiae. Here's a question you can ask yourself to understand the level we're looking for: what does this graph tell you that you can't easily decipher just by looking at the raw data?
+
+## Exercise 3: Effective Graphing (worth 42%)
+
+rubric={accuracy:10}
+
+You'll be making a graph less effective; then, more effective. Don't forget to keep your plots publication-quality.
+
+To get the over-arching "accuracy" rubric indicated here, your code should produce the four plots without error. 
+
+### 3.1
+
+Consider the following graph:
+
+```{r}
+gapminder %>% 
+    filter(continent != "Oceania") %>% 
+    ggplot(aes(lifeExp, gdpPercap)) +
+    geom_point() +
+    facet_wrap(~ continent)
+```
+
+
+#### 3.1.1: Less Effective
+
+rubric={reasoning:8}
+
+Modify the graph so that it is less effective. Ensure the data still appear on the graph. Indicate which components of the grammar you changed to make the graph less effective. Also indicate why it is less effective (one or two brief sentences).
+
+#### 3.1.2: More Effective
+
+rubric={reasoning:8}
+
+Modify the graph so that it is more effective. Indicate which components of the grammar you changed. Also indicate why it is more effective (one or two brief sentences).
+
+### 3.2
+
+Consider the following graph:
+
+```{r}
+HairEyeColor %>% 
+    as_tibble() %>% 
+    uncount(n) %>% 
+    ggplot(aes(Hair)) +
+    geom_bar(aes(fill=Eye), position="dodge") +
+    facet_wrap(~ Sex)
+```
+
+#### 3.2.1: Less Effective
+
+rubric={reasoning:8}
+
+Modify the graph so that it is less effective. Ensure the data still appear on the graph. Indicate which components of the grammar you changed to make the graph less effective. Also indicate why it is less effective (one or two brief sentences).
+
+#### 3.2.2: More Effective
+
+rubric={reasoning:8}
+
+Modify the graph so that it is more effective. Indicate which components of the grammar you changed. Also indicate why it is more effective (one or two brief sentences).

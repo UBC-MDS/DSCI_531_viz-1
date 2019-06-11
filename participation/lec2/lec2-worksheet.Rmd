@@ -1,0 +1,265 @@
+---
+title: "Lecture 2 Worksheet"
+output: github_document
+---
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+library(gapminder)
+students <- as_tibble(HairEyeColor) %>% 
+    uncount(n)
+```
+
+Note: `students` contains 592 observations of Hair, Eye, and Sex:
+
+```{r}
+students %>% 
+    sample_n(10)
+```
+
+# Finish 1- and 2- variable plots from last time
+
+## Bar plots
+
+__Uses of bar plots__: 
+
+1. Estimate probability mass functions / view frequencies of categories
+    - One categorical variable.
+2. Compare a single numeric response corresponding to different categories.
+    - One categorical, one (unique) numeric variable.
+
+What is the distribution of eye colour in `students`?
+
+```{r}
+ggplot(students, aes(FILL_THIS_IN)) +
+    FILL_THIS_IN
+```
+
+| Grammar Component     | Specification |
+|-----------------------|---------------|
+| __data__              | `students` |
+| statistical transform | FILL_THIS_IN |
+| __aesthetic mapping__ | FILL_THIS_IN; TRANSFORM_VARIABLE_TOO |
+| __geometric object__  | Bars |
+| scale                 | Linear count |
+| coordinate system     | Rectangular/Cartesian |
+| facetting             | None |
+
+How does the life expectancy of Canada, USA, and Mexico compare in 2007?
+
+```{r}
+(small_gap <- gapminder %>% 
+     filter(country %in% c("Canada", "United States", "Mexico"),
+            year == 2007) %>% 
+     select(country, lifeExp))
+ggplot(small_gap, aes(FILL_THIS_IN)) +
+    FILL_THIS_IN
+```
+
+| Grammar Component     | Specification |
+|-----------------------|---------------|
+| __data__              | `students` |
+| statistical transform | FILL_THIS_IN |
+| __aesthetic mapping__ | FILL_THIS_IN |
+| __geometric object__  | Bars |
+| scale                 | Linear |
+| coordinate system     | Rectangular/Cartesian |
+| facetting             | None |
+
+## Heatmaps
+
+__Use of heatmaps__: show dependence amongst two categorical variables.
+
+Example: Dependence amongst hair colour and eye colour in the `students` data.
+
+- Points? Jitter? No.
+- `geom_count()`?
+- `geom_bin2d()`!
+
+```{r}
+heat <- ggplot(students, aes(Hair, Eye))
+heat + FILL_THIS_IN
+```
+
+Fill in the grammar components:
+
+| Grammar Component     | Specification |
+|-----------------------|---------------|
+| __data__              | `students` |
+| statistical transform | FILL_THIS_IN |
+| __aesthetic mapping__ | x=Hair, y=Eye; INDICATE_TRANSFORM_VARIABLE_HERE |
+| __geometric object__  | rectangles/squares |
+| scale                 | Linear count |
+| coordinate system     | Rectangular/Cartesian |
+| facetting             | None |
+
+# Three+ Variable Plots
+
+## Time/Line Plots
+
+__Uses of time/line plots__: 
+
+- Visualize trends of a numeric variable over time.
+
+Plot life expectancy over time for each country in `gapminder`.
+
+```{r}
+ggplot(gapminder, aes(year, lifeExp)) +
+    FILL_THIS_IN
+```
+
+| Grammar Component     | Specification |
+|-----------------------|---------------|
+| __data__              | `gapminder` |
+| statistical transform | none |
+| __aesthetic mapping__ | x=year, y=lifeExp, FILL_THIS_IN |
+| __geometric object__  | FILL_THIS_IN |
+| scale                 | x and y both linear |
+| coordinate system     | Rectangular/Cartesian |
+| facetting             | None |
+
+Compare to __path plots__, for which the order matters:
+
+Add to the following scatterplot to see how Rwanda's life expectancy and GDP per capita evolved over time:
+
+```{r}
+gapminder %>% 
+    filter(country == "Rwanda") %>% 
+    ggplot(aes(gdpPercap, lifeExp)) +
+    geom_point()
+```
+
+## Facetting
+
+Make histograms of `gdpPercap` for each (non-Oceania) continent by adding a line to the following code. 
+
+- Try facetting by `qualLifeExp`. 
+- Try the `scales` and `ncol` arguments of the facet layer. 
+
+```{r}
+gapminder %>% 
+    filter(continent != "Oceania") %>% 
+    mutate(qualLifeExp = if_else(lifeExp > 60, "high", "low")) %>% 
+    ggplot(aes(x=gdpPercap)) +
+    geom_histogram() +
+    scale_x_log10()
+```
+
+| Grammar Component     | Specification |
+|-----------------------|---------------|
+| __data__              | `gapminder` |
+| statistical transform | histogram (binning and counting) |
+| __aesthetic mapping__ | x=gdpPercap |
+| __geometric object__  | histogram |
+| scale                 | x is log10; y is linear. |
+| coordinate system     | Rectangular/Cartesian |
+| facetting             | FILL_THIS_IN |
+
+
+## Bubble Plots
+
+Have three numeric variables? Try mapping to size.
+
+Example: x=`gdpPercap`, y=`lifeExp`, size/cex=`pop`
+
+- Try adding `scale_radius()` and `scale_size_area()`. What's better?
+
+```{r}
+ggplot(gapminder, aes(gdpPercap, lifeExp)) +
+    scale_x_log10() +
+    geom_point(aes(FILL_THIS_IN))
+```
+
+Try now making `pop` a colour/color:
+
+```{r}
+ggplot(gapminder, aes(gdpPercap, lifeExp)) +
+    scale_x_log10() +
+    geom_point(aes(FILL_THIS_IN)) +
+    #scale_colour_continuous(trans="log10")
+```
+
+
+## Fill, or Colour?
+
+For each (non-Oceania) continent split into high and low life expectancies, make a tile plot where colour represents mean GDP per capita.
+
+- Try `colour`/`color` and `fill`. 
+
+```{r}
+gapminder %>% 
+    filter(continent != "Oceania") %>% 
+    mutate(qualLifeExp = if_else(lifeExp > 60, "high", "low")) %>% 
+    group_by(continent, qualLifeExp) %>% 
+    summarize(gdpPercap = mean(gdpPercap)) %>% 
+    ggplot(aes(continent, qualLifeExp)) +
+    geom_tile(FILL_THIS_IN)
+```
+
+On the plot of lifeExp vs gdpPercap, colour points by continent.
+
+- Try `shape=21` to distinguish between `fill` (interior) and `colour` (exterior).
+
+```{r}
+ggplot(gapminder, aes(gdpPercap, lifeExp)) +
+    scale_x_log10() +
+    geom_point(FILL_THIS_IN)
+```
+
+List of shapes can be found [at the bottom of the `scale_shape` documentation](https://ggplot2.tidyverse.org/reference/scale_shape.html).
+
+# Exercises
+
+__Exercise 1__: Make the following `gapminder` plot:
+
+- scatterplot of `gdpPercap` vs `lifeExp`
+- `pop` indicated by bubble area
+- facet by `year`
+- colour by `continent`
+
+```{r}
+
+```
+
+
+__Exercise 2__: Make a plot of `year` (x) vs `lifeExp` (y), with points coloured by continent. Then, to that same plot, fit a straight regression line to each continent, without the error bars. If you can, try piping the data frame into the `ggplot` function.
+
+```{r}
+
+```
+
+
+__Exercise 3__: Repeat Exercise 1, but switch the _regression line_ and _geom\_point_ layers. How is this plot different from that of Exercise 1?
+
+```{r}
+
+```
+
+
+__Exercise 4__: Omit the `geom_point` layer from either of the above two plots (it doesn't matter which). Does the line still show up, even though the data aren't shown? Why or why not?
+
+```{r}
+
+```
+
+
+__Exercise 5__: Make a plot of `year` (x) vs `lifeExp` (y), facetted by continent. Then, fit a smoother through the data for each continent, without the error bars. Choose a span that you feel is appropriate.
+
+```{r}
+
+```
+
+
+__Exercise 6__: Plot the population over time (year) using lines, so that each country has its own line. Colour by `gdpPercap`. Add alpha transparency to your liking. 
+
+```{r}
+
+```
+
+
+__Exercise 7__: Add points to the plot in Exercise 5.
+
+```{r}
+
+```
+

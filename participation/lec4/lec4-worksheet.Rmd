@@ -1,0 +1,438 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+# Load packages
+
+Run the following code in your console to install packages:
+
+```
+if (!require(htmlwidgets)) install.packages("htmlwidgets")
+if (!require(wordcloud2)) install.packages("wordcloud2")
+if (!require(GGally)) install.packages("GGally")
+if (!require(plotly)) install.packages("plotly")
+if (!require(ggmap)) install.packages("ggmap")
+if (!require(maps)) install.packages("maps")
+if (!require(networkD3)) install.packages("networkD3")
+if (!require(webshot)) install.packages("webshot")
+```
+
+Load packages:
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(gapminder))
+suppressPackageStartupMessages(library(wordcloud2))
+suppressPackageStartupMessages(library(GGally))
+suppressPackageStartupMessages(library(scales))
+suppressPackageStartupMessages(library(plotly))
+suppressPackageStartupMessages(library(ggmap))
+suppressPackageStartupMessages(library(maps))
+suppressPackageStartupMessages(library(networkD3))
+```
+
+# Specialized Plot Types
+
+## Maps
+
+### Raster maps with `ggmap`
+
+Steps to using `ggmap`:
+
+1.  Load a map with `get_map`.
+    - Special cases: `get_googlemap` (satellite? road? your choice.), `get_cloudmademap`, `get_stamenmap`
+    - Google maps now requires API key! See `ggmap` github page for details.
+2.  Feed that into the `ggmap` function to display the map.
+    -   To make displays overtop of the map, add your `ggplot` call to the `base_layer` argument of `ggmap`, then add your layers as usual *outside* of the `ggmap` call.
+
+Example:
+
+```{r}
+# crime data from `ggmap` package.
+small_crime <- sample_n(crime, 10000)
+bbox <- c(
+    left   = -96, 
+    bottom = 29.5, 
+    right  = -95, 
+    top    = 30
+)
+(basemap <- ggmap::get_stamenmap(bbox, maptype = "toner-lite", zoom = 9) %>% 
+        ggmap::ggmap())
+basemap + 
+    geom_density2d(aes(lon, lat), 
+                   data   = small_crime, 
+                   colour = "red")
+```
+
+Exercise: Modify the following code to retrieve and plot map of UBC. Lower-left GPS coordinates (latitude, longitude): 49.241284, -123.273007; upper-right GPS coordinates: 49.281994, -123.216366. __WARNING__: I don't recommend trying zoom > 14 (it'll be slow).
+
+```{r}
+c(-123.273007, 49.241284, FILL_THIS_IN, FILL_THIS_IN) %>% 
+    get_stamenmap(maptype = "toner-lite", FILL_THIS_IN) %>% 
+    FILL_THIS_IN
+```
+
+
+### Vector maps
+
+Maps are depicted as polygons. The `maps` package has lots of polygon data stored, and can be plotted with `maps::map()`
+
+```{r}
+maps::map("world")
+maps::map("world", region="canada")
+maps::map("france")
+```
+
+Get the data in tidy tibble format with `ggplot2::map_data()`, ready to use with `ggplot()`. Example:
+
+```{r}
+(world_dat <- ggplot2::map_data("world") %>% 
+     as_tibble())
+```
+
+Notice the order of the points. Notice the groups. Use `geom_polygon`:
+
+```{r}
+ggplot(world_dat, aes(long, lat)) +
+    geom_polygon(aes(group=group))
+```
+
+Exercise: Make a plot of Italy.
+
+```{r}
+FILL_THIS_IN
+```
+
+
+## Plotly
+
+The `plotly` R package makes highlight-interactivity possible.
+
+Consider the following plot:
+
+```{r}
+(p <- gapminder %>% 
+     filter(continent != "Oceania") %>% 
+     ggplot(aes(gdpPercap, lifeExp)) +
+     geom_point(aes(colour=pop), alpha=0.2) +
+     scale_x_log10(labels=dollar_format()) +
+     scale_colour_distiller(
+         trans   = "log10",
+         breaks  = 10^(1:10),
+         labels  = comma_format(),
+         palette = "Greens"
+     ) +
+     facet_wrap(~ continent) +
+     scale_y_continuous(breaks=10*(1:10)) +
+     theme_bw())
+```
+
+1. Convert it to a `plotly` object by applying the `ggplotly()` function:
+
+```{r}
+FILL_THIS_IN
+```
+
+2. You can save a plotly graph locally as an html file. Try saving the above:
+    - NOTE: plotly graphs don't seem to show up in Rmd _notebooks_, but they do with Rmd _documents_.
+
+```{r}
+p %>% 
+    ggplotly() %>% 
+    htmlwidgets::saveWidget("LOCATION_GOES_HERE")
+```
+
+
+3. Run this code to see the json format underneath:
+
+```{r, results='hide'}
+p %>% 
+    ggplotly() %>% 
+    plotly_json()
+```
+
+
+4. Check out code to make a plotly object from scratch using `plot_ly()` -- scatterplot of gdpPercap vs lifeExp.
+    - Check out the [cheat sheet](https://images.plot.ly/plotly-documentation/images/r_cheat_sheet.pdf).
+
+```{r}
+plot_ly(gapminder, 
+        x = ~gdpPercap, 
+        y = ~lifeExp, 
+        type = "scatter",
+        mode = "markers",
+        opacity = 0.2) %>% 
+    layout(xaxis = list(type = "log"))
+```
+
+5. Add population to form a z-axis for a 3D plot:
+
+```{r}
+plot_ly(gapminder,
+        x = ~gdpPercap,
+        y = ~lifeExp,
+        z = FILL_THIS_IN,
+        type = "scatter3d",
+        mode = "markers",
+        opacity = 0.2)
+```
+
+
+## Wordclouds
+
+The `wordcloud2` package is excellent for creating word clouds (with some interactivity!).
+
+Check out the [vignette](https://cran.r-project.org/web/packages/wordcloud2/vignettes/wordcloud.html) or the [`wordcloud2` README](https://github.com/Lchiffon/wordcloud2/blob/master/readme.md). Here's an example from the latter:
+
+```{r, echo=FALSE}
+demoFreq %>% 
+    filter(freq > 1) %>%
+    wordcloud2(size = 1, minRotation = -pi/2, maxRotation = -pi/2, shape="circle")
+```
+
+Notice:
+
+- arrangement of words on the plane
+- angle of words
+- colour
+- size
+
+Exercise: What am I saying a lot of in this document (aside from stopwords)? The wrangling is done for you.
+
+```{r}
+this_file <- read_file("lec4.Rmd") %>% 
+    strsplit(" ") %>% 
+    `[[`(1) %>% 
+    as_tibble() %>% 
+    count(value) %>% 
+    setNames(c("word", "freq")) %>% 
+    anti_join(get_stopwords()) %>% 
+    filter(!(word %in% c("", "%>%", "=", "+", "\n", "<-", "-", "+\n")))
+FILL_THIS_IN
+```
+
+
+## GGally
+
+Comes with many extensions to `ggplot2`. Most useful being the pairs functions.
+
+It's name is derived from the package's intent to be an "ally" of `ggplot2`.
+
+Example: use `ggpairs` to plot all combinations of measurements of flea body parts (subset to the first 4 columns to save time):
+
+```{r}
+GGally::ggpairs(flea[, 1:4])
+```
+
+Or, use `ggscatmat` for numeric-only data. It's faster. Numeric gapminder data:
+
+```{r}
+gapminder %>% 
+    select(lifeExp, gdpPercap, pop) %>% 
+    GGally::ggscatmat()
+```
+
+Check out all dependencies in the `iris` data set:
+
+```{r}
+FILL_THIS_IN
+```
+
+
+## Network Diagrams
+
+There are plenty of options for making network diagrams in R. A comprehensive overview of the landscape is given at [kateto.net](http://kateto.net/network-visualization).
+
+We'll be looking at:
+
+- `igraph`: a flexible package for handling network data. [website](http://igraph.org/); [tutorial](https://rstudio-pubs-static.s3.amazonaws.com/74248_3bd99f966ed94a91b36d39d8f21e3dc3.html)
+- `networkD3`: a D3-backed package allowing interactivity. [tutorial](http://christophergandrud.github.io/networkD3/)
+
+### Network Data
+
+Example: Twitter. Let's make a simple example on the board!
+
+Network data is comprised of:
+
+- Nodes/vertices
+- Edges/links
+
+Storage of these data:
+
+- Node data: variables describing each node.
+    - Typical tidy data.
+- Edge data:
+    - Each edge indicated by two columns of nodes; other columns optionally include edge properties (like length).
+    - Could also be in sparse/adjacency matrix format ("wide", or "untidy" data).
+
+Example of Les Mis characters:
+
+```{r}
+data("MisLinks")
+data("MisNodes")
+(MisLinks <- as_tibble(MisLinks))
+(MisNodes <- as_tibble(MisNodes))
+```
+
+### Generic Graphing
+
+Make a simple interactive network plot out of the edges:
+
+```{r}
+networkD3::simpleNetwork(MisLinks)
+```
+
+Get more sophisticated with `forceNetwork` (group specification is required):
+
+```{r}
+networkD3::forceNetwork(MisLinks, MisNodes, NodeID="name", Group="group")
+```
+
+Make a graph with `igraph` of the example we did on the board:
+
+```{r}
+edges <- FILL_IN_WITH_SOME_EDGE_VECTOR
+(g <- igraph::graph(edges))
+plot(g)
+```
+
+### Specialized Network Diagrams
+
+Check out this [tutorial starting at "sankey"](http://christophergandrud.github.io/networkD3/#sankey) for other types of specialized plots.
+
+# If time remains: other `ggplot2` goodies (from last class)
+
+## Saving images
+
+- `knit`ing to html: figures are built-in.
+- `knit`ing to md: figures are saved to file, and read in.
+- Save to file from code:
+    - `ggsave` for ggplot2 objects; 
+    - `pdf()`/`png()`/... + `dev.off()` is the Base R way. 
+
+You can also save an html page snapshot to png -- useful for taking a snapshot of interactive images. Here's an example of saving a snapshot of google.ca: 
+
+```{r}
+#webshot::install_phantomjs()
+webshot::webshot("https://www.google.ca/", "google.pdf")
+```
+
+
+## Scales; Colour
+
+Scale functions in `ggplot2` take the form `scale_[aesthetic]_[mapping]()`.
+
+Let's first focus on the following plot:
+
+```{r}
+p_scales <- ggplot(gapminder, aes(gdpPercap, lifeExp)) +
+     geom_point(aes(colour=pop), alpha=0.2)
+p_scales + 
+    scale_x_log10(labels=scales::dollar_format()) +
+    scale_colour_continuous(
+        trans="log10",
+        labels=scales::comma_format()
+    )
+```
+
+1. Change the y-axis tick mark spacing to 10; the colour spacing has been changed to include all powers of 10.
+
+```{r}
+p_scales +
+    scale_x_log10(labels=scales::dollar_format()) +
+    scale_colour_continuous(
+        trans  = "log10", 
+        labels = scales::comma_format(),
+        breaks = 10^(1:10)
+    ) +
+    FILL_IN_SCALE_FUNCTION(breaks=FILL_IN_BREAKS)
+```
+
+
+2. Use `RColorBrewer` to change the colour scheme.
+    - Notice the three different types of scales: sequential, diverging, and continuous.
+
+```{r}
+## All palettes the come with RColorBrewer:
+RColorBrewer::display.brewer.all()
+p_scales +
+    scale_x_log10(labels=scales::dollar_format()) +
+    FILL_IN_WITH_RCOLORBREWER(
+        trans   = "log10",
+        breaks  = 10^(1:10),
+        labels  = scales::comma_format(),
+        palette = FILL_THIS_IN
+    ) +
+    scale_y_continuous(breaks=10*(1:10))
+```
+
+3. Run the following code to check out the `viridis` scale for a colour-blind friendly scheme.
+    - Hint: add `scale_colour_viridis_c` (`c` stands for continuous; `d` discrete).
+    - You can choose a palette with `option`.
+
+```{r}
+p_scales +
+    scale_x_log10(labels=scales::dollar_format()) +
+    scale_colour_viridis_c(
+        trans   = "log10",
+        breaks  = 10^(1:10),
+        labels  = scales::comma_format()
+    ) +
+    scale_y_continuous(breaks=10*(1:10))
+```
+
+
+## Fill, or Colour?
+
+For each (non-Oceania) continent split into high and low life expectancies, make a tile plot where colour represents mean GDP per capita.
+
+- Try `colour`/`color` and `fill`. 
+
+```{r}
+gapminder %>% 
+    filter(continent != "Oceania") %>% 
+    mutate(qualLifeExp = if_else(lifeExp > 60, "high", "low")) %>% 
+    group_by(continent, qualLifeExp) %>% 
+    summarize(gdpPercap = mean(gdpPercap)) %>% 
+    ggplot(aes(continent, qualLifeExp)) +
+    geom_tile(FILL_THIS_IN)
+```
+
+On the plot of lifeExp vs gdpPercap, colour points by continent.
+
+- Try `shape=21` to distinguish between `fill` (interior) and `colour` (exterior).
+
+```{r}
+ggplot(gapminder, aes(gdpPercap, lifeExp)) +
+    scale_x_log10() +
+    geom_point(FILL_THIS_IN)
+```
+
+List of shapes can be found [at the bottom of the `scale_shape` documentation](https://ggplot2.tidyverse.org/reference/scale_shape.html).
+
+
+## Overplotted scatterplot
+
+Try a scatterplot with:
+
+- Alpha transparency.
+- `geom_hex()`
+- `geom_density2d()`
+
+```{r}
+ggplot(gapminder, aes(gdpPercap, lifeExp)) +
+    ADD_GEOM_HERE
+```
+
+
+## Polar coordinates
+
+Change the following coordinates to polar:
+
+```{r}
+gapminder %>% 
+    filter(year == 2007, continent == "Africa") %>% 
+    ggplot(aes(country, lifeExp)) + 
+    geom_col()
+```

@@ -1,0 +1,307 @@
+---
+title: "Lecture 3 Worksheet"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+library(gapminder)
+library(RColorBrewer)
+library(scales)
+```
+
+
+## Facetting
+
+Make histograms of `gdpPercap` for each (non-Oceania) continent by adding a line to the following code. 
+
+- Try facetting by `qualLifeExp`. 
+- Try the `scales` and `ncol` arguments of the facet layer. 
+
+```{r}
+gapminder %>% 
+    filter(continent != "Oceania") %>% 
+    mutate(qualLifeExp = if_else(lifeExp > 60, "high", "low")) %>% 
+    ggplot(aes(x=gdpPercap)) +
+    geom_histogram() +
+    scale_x_log10()
+```
+
+| Grammar Component     | Specification |
+|-----------------------|---------------|
+| __data__              | `gapminder` |
+| statistical transform | histogram (binning and counting) |
+| __aesthetic mapping__ | x=gdpPercap; y=count |
+| __geometric object__  | histogram |
+| scale                 | x is log10; y is linear. |
+| coordinate system     | Rectangular/Cartesian |
+| facetting             | FILL_THIS_IN |
+
+# Theming
+
+__Question__: What makes a plot "publication quality"?
+
+Changing the look of a graphic can be achieved through the `theme()` layer.
+
+There are ["complete themes"](http://ggplot2.tidyverse.org/reference/ggtheme.html) that come with `ggplot2`, my favourite being `theme_bw` (I've grown tired of the default gray background, so `theme_bw` is refreshing).
+
+1. Change the theme of the following plot to `theme_bw()`:
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
+     facet_wrap(~ Species) +
+     geom_point() +
+     labs(x = "Sepal Width",
+          y = "Sepal Length",
+          title = "Sepal sizes of three plant species")
+```
+
+2. Then, change font size of axis labels, and the strip background colour. Others?
+
+```{r}
+ggplot(iris, aes(Sepal.Width, Sepal.Length)) +
+     facet_wrap(~ Species) +
+     geom_point() +
+     labs(x = "Sepal Width",
+          y = "Sepal Length",
+          title = "Sepal sizes of three plant species") +
+    theme_bw() +
+    theme(FILL_IN_ARG_FOR_AXIS_TITLE = FILL_THIS_IN,
+          strip.background = FILL_THIS_IN)
+```
+
+# Scales; Colour
+
+Scale functions in `ggplot2` take the form `scale_[aesthetic]_[mapping]()`.
+
+Let's first focus on the following plot:
+
+```{r}
+p_scales <- ggplot(gapminder, aes(gdpPercap, lifeExp)) +
+     geom_point(aes(colour=pop), alpha=0.2)
+p_scales + 
+    scale_x_log10() +
+    scale_colour_continuous(trans="log10")
+```
+
+1. Change the y-axis tick mark spacing to 10; change the colour spacing to include all powers of 10.
+
+```{r}
+p_scales +
+    scale_x_log10() +
+    scale_colour_continuous(
+        trans  = "log10", 
+        breaks = FILL_IN_BREAKS
+    ) +
+    FILL_IN_SCALE_FUNCTION(breaks=FILL_IN_BREAKS)
+```
+
+2. Specify `scales::*_format` in the `labels` argument of a scale function to do the following:
+    - Change the x-axis labels to dollar format (use `scales::dollar_format()`)
+    - Change the colour labels to comma format (use `scales::comma_format()`)
+
+```{r}
+p_scales +
+    scale_x_log10(labels=FILL_THIS_IN) +
+    scale_colour_continuous(
+        trans  = "log10", 
+        breaks = 10^(1:10),
+        labels = FILL_THIS_IN
+    ) +
+    scale_y_continuous(breaks=10*(1:10))
+```
+
+3. Use `RColorBrewer` to change the colour scheme.
+    - Notice the three different types of scales: sequential, diverging, and continuous.
+
+```{r}
+## All palettes the come with RColorBrewer:
+RColorBrewer::display.brewer.all()
+p_scales +
+    scale_x_log10(labels=dollar_format()) +
+    FILL_IN_WITH_RCOLORBREWER(
+        trans   = "log10",
+        breaks  = 10^(1:10),
+        labels  = comma_format(),
+        palette = FILL_THIS_IN
+    ) +
+    scale_y_continuous(breaks=10*(1:10))
+```
+
+4. Run the following code to check out the `viridis` scale for a colour-blind friendly scheme.
+    - Hint: add `scale_colour_viridis_c` (`c` stands for continuous; `d` discrete).
+    - You can choose a palette with `option`.
+
+```{r}
+p_scales +
+    scale_x_log10(labels=dollar_format()) +
+    scale_colour_viridis_c(
+        trans   = "log10",
+        breaks  = 10^(1:10),
+        labels  = comma_format()
+    ) +
+    scale_y_continuous(breaks=10*(1:10))
+```
+
+## Requests?
+
+Is there anything you'd like to see done in `ggplot2`? Keep in mind we're seeing special plot types next time.
+
+
+## Bubble Plots
+
+Have three numeric variables? Try mapping to size.
+
+Example: x=`gdpPercap`, y=`lifeExp`, size/cex=`pop`
+
+- Try adding `scale_radius()` and `scale_size_area()`. What's better?
+
+```{r}
+ggplot(gapminder, aes(gdpPercap, lifeExp)) +
+    scale_x_log10() +
+    geom_point(aes(FILL_THIS_IN))
+```
+
+Try now making `pop` a colour/color:
+
+```{r}
+ggplot(gapminder, aes(gdpPercap, lifeExp)) +
+    scale_x_log10() +
+    geom_point(aes(FILL_THIS_IN)) +
+    #scale_colour_continuous(trans="log10")
+```
+
+
+## Fill, or Colour?
+
+For each (non-Oceania) continent split into high and low life expectancies, make a tile plot where colour represents mean GDP per capita.
+
+- Try `colour`/`color` and `fill`. 
+
+```{r}
+gapminder %>% 
+    filter(continent != "Oceania") %>% 
+    mutate(qualLifeExp = if_else(lifeExp > 60, "high", "low")) %>% 
+    group_by(continent, qualLifeExp) %>% 
+    summarize(gdpPercap = mean(gdpPercap)) %>% 
+    ggplot(aes(continent, qualLifeExp)) +
+    geom_tile(FILL_THIS_IN)
+```
+
+On the plot of lifeExp vs gdpPercap, colour points by continent.
+
+- Try `shape=21` to distinguish between `fill` (interior) and `colour` (exterior).
+
+```{r}
+ggplot(gapminder, aes(gdpPercap, lifeExp)) +
+    scale_x_log10() +
+    geom_point(FILL_THIS_IN)
+```
+
+List of shapes can be found [at the bottom of the `scale_shape` documentation](https://ggplot2.tidyverse.org/reference/scale_shape.html).
+
+
+## Overplotted scatterplot
+
+Try a scatterplot with:
+
+- Alpha transparency.
+- `geom_hex()`
+- `geom_density2d()`
+
+```{r}
+ggplot(gapminder, aes(gdpPercap, lifeExp)) +
+    ADD_GEOM_HERE
+```
+
+
+
+## Polar coordinates
+
+Change the following coordinates to polar:
+
+```{r}
+gapminder %>% 
+    filter(year == 2007, continent == "Africa") %>% 
+    ggplot(aes(country, lifeExp)) + 
+    geom_col()
+```
+
+# Saving Graphs to File
+
+- Don't use the mouse
+- Use `ggsave` for ggplot
+    - Practice by saving the following plot to file: 
+
+```{r}
+ggplot(mtcars, aes(hp, wt)) + 
+    geom_point()
+ggsave(FILENAME_HERE, PLOT_OBJECT_HERE)
+```
+
+- Base R way: print plots "to screen", sandwiched between `pdf()`/`jpeg()`/`png()`... and `dev.off()`. 
+- Vector vs. raster: Images are stored on your computer as either _vector_ or _raster_.
+    - __Raster__: an `n` by `m` grid of pixels, each with its own colour. `jpeg`, `png`, `gif`, `bmp`.
+    - __Vector__: represented as shapes and lines. `pdf`, [`svg`](https://www.w3schools.com/graphics/svg_intro.asp).
+    - For tips: ["10 tips for making your R graphics look their best""](http://blog.revolutionanalytics.com/2009/01/10-tips-for-making-your-r-graphics-look-their-best.html).
+    
+
+
+
+
+
+## Practice Exercises
+
+__Exercise 1__: Make the following `gapminder` plot:
+
+- scatterplot of `gdpPercap` vs `lifeExp`
+- `pop` indicated by bubble area
+- facet by `year`
+- colour by `continent`
+
+```{r}
+
+```
+
+
+__Exercise 2__: Make a plot of `year` (x) vs `lifeExp` (y), with points coloured by continent. Then, to that same plot, fit a straight regression line to each continent, without the error bars. If you can, try piping the data frame into the `ggplot` function.
+
+```{r}
+
+```
+
+
+__Exercise 3__: Repeat Exercise 2, but switch the _regression line_ and _geom\_point_ layers. How is this plot different from that of Exercise 1?
+
+```{r}
+
+```
+
+
+__Exercise 4__: Omit the `geom_point` layer from either of the above two plots (it doesn't matter which). Does the line still show up, even though the data aren't shown? Why or why not?
+
+```{r}
+
+```
+
+
+__Exercise 5__: Make a plot of `year` (x) vs `lifeExp` (y), facetted by continent. Then, fit a smoother through the data for each continent, without the error bars. Choose a span that you feel is appropriate.
+
+```{r}
+
+```
+
+
+__Exercise 6__: Plot the population over time (year) using lines, so that each country has its own line. Colour by `gdpPercap`. Add alpha transparency to your liking. 
+
+```{r}
+
+```
+
+
+__Exercise 7__: Add points to the plot in Exercise 6.
+
+```{r}
+
+```
+
