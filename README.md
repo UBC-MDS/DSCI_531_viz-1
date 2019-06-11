@@ -54,9 +54,9 @@ At your service!
 | [2](lectures/lec2.md) / [complete worksheet](lectures/lec2-worksheet-complete.md) | EDA; aesthetic mappings in `ggplot2` | [r4ds: data-vis](http://r4ds.had.co.nz/data-visualisation.html), esp. 3.3 |
 | [3](lectures/lec3.md) / [complete worksheet](lectures/lec3-worksheet-complete.md) | Dependence. Finish looking at `ggplot2` as a tool. | [stat545: colors](http://stat545.com/block018_colors.html); [Jenny's theme tutorial](https://github.com/jennybc/ggplot2-tutorial/blob/master/gapminder-ggplot2-themes.md) |
 | [4](lectures/lec4.md) / [complete worksheet](lectures/lec4-worksheet-complete.html) | Special plot types: `GGally`, Interactivity and 3D plotting with `plotly`, `ggmaps` | [ggobi's list of GGally extensions](http://ggobi.github.io/ggally/); [r-bloggers on `ggmap`](https://www.r-bloggers.com/how-to-plot-basic-maps-with-ggmap/) |
-| [5](lectures/lec5.md) / [worksheet](participation/lec5/lec5-worksheet.md) | Plotting for humans | [stat545: dos-and-donts](http://stat545.com/block015_graph-dos-donts.html), [Geckoboard tips](https://www.geckoboard.com/learn/data-literacy/data-visualization-tips/) |
-| [6](lectures/lec6.md) / [complete worksheet](lectures/lec6-worksheet-complete.md) | Plotting in Python, Part I: matplotlib | [pyplot tut](https://matplotlib.org/users/pyplot_tutorial.html) | 
-| [7](lectures/lec7.md) / [complete worksheet](lectures/lec7-worksheet-complete.md) | Plotting in Python, Part II: seaborn | [elitedatascience seaborn tut](https://elitedatascience.com/python-seaborn-tutorial) |
+| [5](lectures/lec5.md) | Plotting for humans | [stat545: dos-and-donts](http://stat545.com/block015_graph-dos-donts.html), [Geckoboard tips](https://www.geckoboard.com/learn/data-literacy/data-visualization-tips/) |
+| [6](lectures/lec6.ipynb)  | Plotting in Python, Part I: matplotlib | [pyplot tut](https://matplotlib.org/users/pyplot_tutorial.html) | 
+| [7](lectures/lec7.ipynb)  | Plotting in Python, Part II: seaborn | [elitedatascience seaborn tut](https://elitedatascience.com/python-seaborn-tutorial) |
 | [8](lectures/lec8.md) | Hackathon  |
 
 
