@@ -2,11 +2,8 @@
 
 Effective static data graphics using R and python for exploratory data analysis.
 
-__Course github__: <https://github.ubc.ca/mds-2018-19/DSCI_531_viz-1_students>
+__Course website__: <https://ubc-mds.github.io/DSCI_531_viz-1/>
 
-__Course website__: <https://pages.github.ubc.ca/MDS-2018-19/DSCI_531_viz-1_students/>
-
-__Slack Channel__: <https://ubc-mds.slack.com/messages/531_viz-1>
 
 ## Course Learning Outcomes
 
