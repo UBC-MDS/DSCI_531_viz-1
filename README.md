@@ -34,17 +34,6 @@ You'll be evaluated as follows:
 
 Tip: Use the lecture learning objectives as beacons when studying for your quizzes!
 
-## Teaching Team
-
-At your service!
-
-| Position           | Name            | Slack Handle | GHE handle |
-|--------------------|-----------------|--------------|------------|
-| Lecture + Lab Instructor         | Vincenzo Coia   | `@vcoia` | `@vcoia` |
-| Teaching Assistant | Ali Mirza       | `@Ali Mirza` | `@amirza17` | 
-| Teaching Assistant | Chris Gubbels   | `@Chris Gubbels` | `@gubbelcn` | 
-| Teaching Assistant | Hayley Guillou  | `@Hayley` | `@guillouh` |
-
 
 ## Lecture Details
 
