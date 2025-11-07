@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Syllabus &#8212; DSCI 531&lt;br&gt;Data Visualization I</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <link rel="icon" href="_static/mds-hex-sticker-small.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Intro to data visualization and graphical grammars" href="lectures/1-intro-viz-altair-ggplot.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/mds-hex-sticker-small.png" class="logo__image only-light" alt="DSCI 531<br>Data Visualization I - Home"/>
+    <script>document.write(`<img src="_static/mds-hex-sticker-small.png" class="logo__image only-dark" alt="DSCI 531<br>Data Visualization I - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lectures/1-intro-viz-altair-ggplot.html">1. Intro to data visualization and graphical grammars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lectures/2-data-types_graphical-marks_visual-encondings.html">2. Effective use of visual channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lectures/3-visualization-concepts.html">3. Visualizing data distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lectures/4-eda.html">4. Exploratory data analysis (EDA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lectures/5-communication-intro.html">5. Visualization for communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lectures/6-color-theory-and-application.html">6. Color theory and application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lectures/7-trendlines-confidence-intervals.html">7. Confidence intervals, figure layouts, and interactivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lectures/8-figure-composition.html">8. Figure formats, interactivity and paired comparisons</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lectures/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://altair-viz.github.io/">Altair documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ggplot2.tidyverse.org/">ggplot documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://socviz.co/">Data visualization intro</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://clauswilke.com/dataviz/index.html">Fundamentals of data visualization</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/intro.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Syllabus</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-structure">Course structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-environment-setup">Conda environment setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-lecture-notes">Running the lecture notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-learning-outcomes">Course learning outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessments">Assessments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-topics">Lecture topics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teaching-team">Teaching team</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covid-19-safety">COVID-19 safety</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotated-resources">Annotated resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-data-visualization">General data visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization-in-r-ggplot2">Data visualization in R (ggplot2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization-in-python-altair">Data visualization in Python (Altair)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-of-additional-references">Collection of additional references</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="syllabus">
+<h1>Syllabus<a class="headerlink" href="#syllabus" title="Link to this heading">#</a></h1>
+<p>👋 <strong>Welcome to DSCI 531!</strong> 🚀</p>
+<p>In this course we will learn how to (and how not to) visualize data. We will cover graphical grammars and practice using them via ggplot in R and Altair in Python. With these tools, we will create effective data visualizations that strengthen our own exploratory data analysis skills and our ability to communicate insights to others.</p>
+<section id="course-structure">
+<h2>Course structure<a class="headerlink" href="#course-structure" title="Link to this heading">#</a></h2>
+<p>The main parts of this course are the following:</p>
+<ul class="simple">
+<li><p>Lecture notes, lab solutions, and course info  are put together on this site.</p></li>
+<li><p>Lab assignments are submitted via Gradescope (use the link from Canvas to get into Gradescope).</p></li>
+<li><p>Quizzes will be administrated via PrairieLearn.</p></li>
+<li><p>Office hours will be administrated in person or via Zoom (Zoom links are on Canvas and in <a class="reference external" href="https://ubc-mds.github.io/calendar/">the MDS calendar</a>).</p></li>
+</ul>
+<p>A few additional details as we get started:</p>
+<ul class="simple">
+<li><p>Required readings are listed on top of the lecture notes.
+There are none for the first class,
+but there will be for many of the other classes.</p></li>
+<li><p>Important course announcements are made via on Slack by tagging everyone in the channel so that you get a notification.
+We will also <a class="reference external" href="https://slack.com/help/articles/205239997-Pin-messages-and-bookmark-links">pin these messages</a>
+so that you can view a list of all important messages at one place by clicking “Pinned messages” in the top left corner of the Slack channel.</p></li>
+<li><p>Before asking a new question,
+please <a class="reference internal" href="lectures/faq.html"><span class="std std-doc">search the FAQ from previous iterations of the course</span></a>.</p></li>
+<li><p>When asking about specific lab questions on Slack,
+you can add a text tag (e.g. <code class="docutils literal notranslate"><span class="pre">lab3py_q10</span></code>)
+to make it easier for you and your colleagues to search the channel.</p></li>
+<li><p>If you have any questions regarding the course content, lectures, labs, autograders, etc,
+please post your question in the course Slack channel
+instead of sending a direct message to the instructor or TAs.
+This approach enables the teaching team (or another student)
+to respond more promptly
+and also benefits other students
+who might have similar questions.</p></li>
+<li><p>Response time:
+We will try our best to reply to your inquiries as soon as possible
+during the regular working hours (9 am - 5 pm Mon-Fri).
+If you send us a message outside of regular working hours,
+please expect a response on the next working day.</p></li>
+</ul>
+</section>
+<section id="conda-environment-setup">
+<h2>Conda environment setup<a class="headerlink" href="#conda-environment-setup" title="Link to this heading">#</a></h2>
+<p>To set up the necessary packages for running the labs
+and lecture material from 531,
+<a class="reference external" href="https://github.ubc.ca/mds-2025-26/DSCI_531_viz-1_students/blob/master/environment.yaml">download the environment file from the student repo to your computer</a>
+(hit “Raw” and then <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> + <code class="docutils literal notranslate"><span class="pre">s</span></code> to save it, or copy paste the content).
+Then create a virtual environment by using <code class="docutils literal notranslate"><span class="pre">conda</span></code> with the environment file you just downloaded:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">--</span><span class="n">file</span> <span class="n">environment</span><span class="o">.</span><span class="n">yaml</span>
+</pre></div>
+</div>
+<p>This will setup both R and Python
+with the correct versions of all required packages.
+If you prefer (or run into issues),
+you are free to use your system R installation
+and setup the packages from the environment file manually instead.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t remember how to use a conda environment with JupyterLab,
+<a class="reference external" href="https://ubc-mds.github.io/DSCI_521_platforms-dsci_book/lectures/7a-virtual-environments-conda.html#making-environments-work-well-with-jupyterlab">review this section of Lec 8 in 521</a>.
+In essence, you should only need to run the following command
+from the environment where you have JupyterLab installed (e.g. <code class="docutils literal notranslate"><span class="pre">base</span></code> or <code class="docutils literal notranslate"><span class="pre">jl</span></code>)
+if you haven’t already done so.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">nb_conda_kernels</span>
+</pre></div>
+</div>
+<p>Next time you open JupyterLab,
+you should be able to select <code class="docutils literal notranslate"><span class="pre">531-py</span></code> or <code class="docutils literal notranslate"><span class="pre">531-r</span></code>
+as your notebook kernel.</p>
+</div>
+</section>
+<section id="running-the-lecture-notes">
+<h2>Running the lecture notes<a class="headerlink" href="#running-the-lecture-notes" title="Link to this heading">#</a></h2>
+<p>If you want to annotate on the lecture notes,
+you can download a PDF version by clicking on the little download icon on the top of the page.
+If you want to run the lecture notes on your computer,
+you can download the folder called <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> from the student repo.</p>
+<p>The Python cells can be run as is,
+but you need to copy the R cells
+to a new R notebook to run them.
+The simplest way is manually copy the cells you are interested in trying out,
+but if you want to extract all the R cells at once
+you could try the <code class="docutils literal notranslate"><span class="pre">nbconvert</span></code> command line tool.
+This is what it would look like to create a separate R-notebook for the first lecture
+(this part is totally optional and might not work on all OSes):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>notebook<span class="w"> </span>--output<span class="o">=</span>lec1-r.ipynb<span class="w"> </span><span class="m">1</span>-intro-viz-altair-ggplot.ipynb<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--ClearMetadataPreprocessor.enabled<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--ClearMetadataPreprocessor.clear_notebook_metadata<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--RegexRemovePreprocessor.enabled<span class="o">=</span>True<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--RegexRemovePreprocessor.patterns<span class="o">=</span><span class="s2">&quot;(?\!%%R.*)&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/&quot;%%R.*\\n&quot;,//&#39;</span><span class="w"> </span>lec1-r.ipynb
+</pre></div>
+</div>
+<p>Alternatively you could also try installing <a class="reference external" href="https://github.com/rpy2/rpy2">rpy2</a>
+and run R and Python in the same notebook,
+but in the past there have been some occasional issues with this package
+so we generally don’t recommend this unless you are OK potentially spending some extra time on troubleshooting.
+This is an optional step and you don’t need to install rpy2 for anything mandatory in 531.</p>
+</section>
+<section id="course-learning-outcomes">
+<h2>Course learning outcomes<a class="headerlink" href="#course-learning-outcomes" title="Link to this heading">#</a></h2>
+<p>In this course students will learn how to</p>
+<ol class="arabic simple">
+<li><p>Use a grammar of graphics to create data visualizations.</p></li>
+<li><p>Use ggplot and Altair to generate data visualizations.</p></li>
+<li><p>Perform exploratory data analysis on a dataset.</p></li>
+<li><p>Select the data visualization most appropriate for the data-type and the communication goal.</p></li>
+<li><p>Interpret data visualizations to answer questions and formulate follow-up questions.</p></li>
+</ol>
+<p>Detailed learning outcomes are available in the lecture notes.</p>
+</section>
+<section id="assessments">
+<h2>Assessments<a class="headerlink" href="#assessments" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>For each lab, you will have two submissions:
+one notebook with your Python code and one notebook with your R code.</p></li>
+<li><p>In 531,
+the worksheet style questions are part of each lab notebook.
+This means that the first few questions in each lab
+will have all their tests visible for you.
+The reason for this
+is to reduce the number of separate documents and submissions
+that you have to keep track of.</p></li>
+<li><p>The weight for the assessments can be seen below;
+due dates can be found on Gradescope.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Assessment</p></th>
+<th class="head"><p>Weight</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Lab 1</p></td>
+<td><p>12.5%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lab 2</p></td>
+<td><p>12.5%</p></td>
+</tr>
+<tr class="row-even"><td><p>Quiz 1</p></td>
+<td><p>25%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lab 3</p></td>
+<td><p>12.5%</p></td>
+</tr>
+<tr class="row-even"><td><p>Lab 4</p></td>
+<td><p>12.5%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Quiz 2</p></td>
+<td><p>25%</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="lecture-topics">
+<h2>Lecture topics<a class="headerlink" href="#lecture-topics" title="Link to this heading">#</a></h2>
+<p>See the <a class="reference external" href="https://ubc-mds.github.io/calendar/">MDS Calendar</a> for lectures times.
+Each week will focus on a separate theme.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lecture</p></th>
+<th class="head"><p>Topic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Intro to data visualization and graphical grammars</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Effective use of visual channels</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Visualizing data distributions</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Exploratory data analysis</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Visualization for communication</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Color theory and application</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Uncertainty, layouts, and interactivity</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Figure formats, paired comparisons, and more interactivity</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="teaching-team">
+<h2>Teaching team<a class="headerlink" href="#teaching-team" title="Link to this heading">#</a></h2>
+<p>See the <a class="reference external" href="https://ubc-mds.github.io/calendar/">MDS Calendar</a> for office hours.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Role</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Slack</p></th>
+<th class="head"><p>Email</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Instructor Sec1</p></td>
+<td><p>Payman Nickchi</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&#64;Payman</span> <span class="pre">Nickchi</span></code></p></td>
+<td><p><a class="reference external" href="mailto:payman&#46;nickchi&#37;&#52;&#48;ubc&#46;ca">payman<span>&#46;</span>nickchi<span>&#64;</span>ubc<span>&#46;</span>ca</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Instructor Sec2</p></td>
+<td><p>Andy Tai</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&#64;Andy</span></code></p></td>
+<td><p><a class="reference external" href="mailto:andy&#46;tai&#37;&#52;&#48;stat&#46;ubc&#46;ca">andy<span>&#46;</span>tai<span>&#64;</span>stat<span>&#46;</span>ubc<span>&#46;</span>ca</a></p></td>
+</tr>
+<tr class="row-even"><td><p>TA Sec1</p></td>
+<td><p>Jenny Zhang</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&#64;Jenny</span> <span class="pre">Zhang</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>TA Sec1</p></td>
+<td><p>Nima Hashemi</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&#64;Nima</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>TA Sec1</p></td>
+<td><p>Kate Manskaia</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Kate</span> <span class="pre">Manskaia</span> <span class="pre">-</span> <span class="pre">TA</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>TA Sec1</p></td>
+<td><p>Skylar Fang (TA)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&#64;Skylar</span> <span class="pre">Fang</span> <span class="pre">(TA)</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>TA Sec2</p></td>
+<td><p>Ali Balapour</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Ali</span> <span class="pre">Balapour</span> <span class="pre">(TA)</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>TA Sec2</p></td>
+<td><p>Inder Khera</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Inder</span> <span class="pre">Khera</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>TA Sec2</p></td>
+<td><p>Parsa Seyfourian</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Parsa</span> <span class="pre">Seyfourian</span> <span class="pre">(TA)</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>TA Sec2</p></td>
+<td><p>Tony Liang</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Tony</span> <span class="pre">Liang</span> <span class="pre">(TA)</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="policies">
+<h2>Policies<a class="headerlink" href="#policies" title="Link to this heading">#</a></h2>
+<p>Please see the general <a class="reference external" href="https://ubc-mds.github.io/policies/">MDS policies</a>.</p>
+</section>
+<section id="covid-19-safety">
+<h2>COVID-19 safety<a class="headerlink" href="#covid-19-safety" title="Link to this heading">#</a></h2>
+<p>Read the <a class="reference external" href="https://srs.ubc.ca/health-safety/safety-programs/communicable-disease-prevention-framework/covid-19/">UBC COVID-19 Campus Rules</a> for the latest updates of what is expected of you in terms of COVID-safety.</p>
+</section>
+<section id="annotated-resources">
+<h2>Annotated resources<a class="headerlink" href="#annotated-resources" title="Link to this heading">#</a></h2>
+<p>Specific and required readings will be listed in the lecture notes.
+The resources below are optional if you wish to learn more about visualization.</p>
+<section id="general-data-visualization">
+<h3>General data visualization<a class="headerlink" href="#general-data-visualization" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://clauswilke.com/dataviz/index.html">Fundamentals of Data Visualization</a></p>
+<ul class="simple">
+<li><p>General principles of visualization independent of programming language.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://ubc.summon.serialssolutions.com/search?spellcheck=true&amp;amp;s.q=tamara+munzer#!/search?ho=t&amp;amp;l=en&amp;amp;q=visualization%20analysis%20and%20design">Visualization analysis and design</a></p>
+<ul class="simple">
+<li><p>More detailed resource, can be downloaded through the UBC online library</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="data-visualization-in-r-ggplot2">
+<h3>Data visualization in R (ggplot2)<a class="headerlink" href="#data-visualization-in-r-ggplot2" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://ggplot2-book.org">ggplot2 book</a></p>
+<ul class="simple">
+<li><p>Comprehensive resource for learning about <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> by its main author.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://r4ds.had.co.nz/">R for Data Science (r4ds)</a></p>
+<ul class="simple">
+<li><p>Overall good book on using R for data science, including visualization.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf">ggplot2 cheat sheet</a></p>
+<ul class="simple">
+<li><p>Great for quick reference.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://wilkelab.org/practicalgg/index.html">ggplot examples from Fundamentals of Data Visualization</a></p></li>
+</ol>
+</section>
+<section id="data-visualization-in-python-altair">
+<h3>Data visualization in Python (Altair)<a class="headerlink" href="#data-visualization-in-python-altair" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://altair-viz.github.io/gallery/index.html">Altair Example Gallery</a></p>
+<ul class="simple">
+<li><p>The user guide for the <code class="docutils literal notranslate"><span class="pre">Altair</span></code> library.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/uwdata/visualization-curriculum/blob/master/LICENSE">UW CSE512 - Data Visualization curriculum</a></p>
+<ul class="simple">
+<li><p>Parts of our curriculum are based of this course.</p></li>
+<li><p>Available under the open BSD-3 license. Copyright (c) 2019, University of Washington. All rights reserved.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/altair-viz/altair_notebooks">Altair Tutorials</a></p>
+<ul class="simple">
+<li><p>Several annotated Altair examples.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="collection-of-additional-references">
+<h3>Collection of additional references<a class="headerlink" href="#collection-of-additional-references" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://www.cookbook-r.com/Graphs/">R Graphics Cookbook</a></p></li>
+<li><p><a class="reference external" href="http://stat545.com/graph00_index.html">STAT 545.com</a> by Jenny Bryan.</p></li>
+</ol>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="lectures/1-intro-viz-altair-ggplot.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Intro to data visualization and graphical grammars</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-structure">Course structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-environment-setup">Conda environment setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-lecture-notes">Running the lecture notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-learning-outcomes">Course learning outcomes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessments">Assessments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-topics">Lecture topics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teaching-team">Teaching team</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#policies">Policies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#covid-19-safety">COVID-19 safety</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotated-resources">Annotated resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-data-visualization">General data visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization-in-r-ggplot2">Data visualization in R (ggplot2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization-in-python-altair">Data visualization in Python (Altair)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collection-of-additional-references">Collection of additional references</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Joel Ostblom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
