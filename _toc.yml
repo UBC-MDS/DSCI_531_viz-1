@@ -1,0 +1,52 @@
+format: jb-book
+root: intro.md
+parts:
+  - caption: Lectures
+    numbered: 3
+    chapters:
+      - file: lectures/1-intro-viz-altair-ggplot.md
+      - file: lectures/2-data-types_graphical-marks_visual-encondings.md
+      - file: lectures/3-visualization-concepts.md
+      - file: lectures/4-eda.md
+      - file: lectures/5-communication-intro.md
+      - file: lectures/6-color-theory-and-application.md
+      - file: lectures/7-trendlines-confidence-intervals.md
+      - file: lectures/8-figure-composition.md
+  # - caption: Lab solutions
+  #   numbered: 1
+  #   chapters:
+  #     - file: labs/lab1/lab1.md
+  #       sections:
+  #         - file: labs/lab1/py/autograder/lab1_py2.ipynb
+  #           title: Py
+  #         - file: labs/lab1/r/autograder/lab1_r2.ipynb
+  #           title: R
+  #     - file: labs/lab2/lab2.md
+  #       sections:
+  #         - file: labs/lab2/py/autograder/lab2_py2.ipynb
+  #           title: Py
+  #         - file: labs/lab2/r/autograder/lab2_r2.ipynb
+  #           title: R
+  #     - file: labs/lab3/lab3.md
+  #       sections:
+  #         - file: labs/lab3/py/autograder/lab3_py2.ipynb
+  #           title: Py
+  #         - file: labs/lab3/r/autograder/lab3_r2.ipynb
+  #           title: R
+  #     - file: labs/lab4/lab4.md
+  #       sections:
+  #         - file: labs/lab4/py/autograder/lab4_py2.ipynb
+  #           title: Py
+  #         - file: labs/lab4/r/autograder/lab4_r2.ipynb
+  #           title: R
+  - caption: Resources
+    chapters:
+      - file: lectures/faq.md
+      - url: https://altair-viz.github.io/
+        title: Altair documentation
+      - url: https://ggplot2.tidyverse.org/
+        title: ggplot documentation
+      - url: https://socviz.co/
+        title: Data visualization intro
+      - url: https://clauswilke.com/dataviz/index.html
+        title: Fundamentals of data visualization

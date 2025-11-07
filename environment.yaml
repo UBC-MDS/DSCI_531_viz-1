@@ -1,0 +1,38 @@
+name: '531'
+channels:
+    - conda-forge
+    - r
+    - defaults
+dependencies:
+    - python>=3.11
+    - pip
+    - ipykernel
+    - nb_conda_kernels
+    - otter-grader=5.7.*  # Update each year
+    - altair-all=5.5.*
+    - vega_datasets  # Altair example data
+    - scipy
+    - matplotlib
+    - r-base>=4.1  # Windows has issues with >4.1
+    - r-essentials
+    - r-devtools
+    - r-gert
+    - r-usethis
+    - r-testthat
+    - r-startup
+    - r-rmarkdown
+    - r-stringi
+    - r-tidyverse
+    - r-hmisc
+    - r-rjson
+    - r-ottr  # Check if this works well each year
+    - r-ggally
+    - r-ggthemes
+    - r-cowplot
+    - r-irkernel
+    # Needed in instructor env only:
+    # - rpy2  # For working with R and Py in the same notebook, can cause issues on some machines
+    # ghp-import  # For pushing the lecture notes
+    # jupyter-book  # Build course page
+    - pip:
+        - altair_ally
