@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: 'DSCI 531<br>Data Visualization I'
-author: Joel Ostblom
+author: Andy MAn Yeung Tai, Payman Nickchi, Joel Östblom
 logo: mds-hex-sticker-small.png
 only_build_toc_files: true
 
@@ -36,8 +36,8 @@ html:
   use_repository_button     : false  # Whether to add a link to your repository button
   use_issues_button         : false  # Whether to add an "open an issue" button
   use_multitoc_numbering: false  # Reset numbering for each section
-  extra_navbar: 'Joel Östblom, MDS 2021<br>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>' # Will be displayed underneath the left navbar.
-  # extra_footer: 'Joel Östblom, MDS 2021<br>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>' # Will be displayed underneath the left navbar.
+  extra_navbar: 'Andy Man Yeung Tai, Payman Nickchi, Joel Östblom, MDS 2025<br>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>' # Will be displayed underneath the left navbar.
+  # extra_footer: 'Andy Man Yeung Tai, Payman Nickchi, Joel Östblom, MDS 2025<br>Powered by <a href="https://jupyterbook.org">Jupyter Book</a>' # Will be displayed underneath the left navbar.
 # Parse and render settings
 parse:
   myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
