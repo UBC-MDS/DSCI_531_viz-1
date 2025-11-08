@@ -14,7 +14,7 @@ Then the output of that command needs to be uploaded to the gh-pages branch of t
 which can be done by installing ghp-import (`pip install ghp-import`) and then running:
 
 ```
-ghp-import -n -p -f ./_build/html -r git@github.ubc.ca:mds-2023-24/DSCI_531_viz-1_students.git
+ghp-import -n -p -f ./_build/html -r git@github.com:ubc-mds/DSCI_531_viz-1.git
 ```
 
 The `-r` flag allows us to upload the course book to the student repo instead of the instructor repo.

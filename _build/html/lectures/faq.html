@@ -1,0 +1,1001 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FAQ &#8212; DSCI 531&lt;br&gt;Data Visualization I</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/faq';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="8. Figure formats, interactivity and paired comparisons" href="8-figure-composition.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">DSCI 531<br>Data Visualization I</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Syllabus
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1-intro-viz-altair-ggplot.html">1. Intro to data visualization and graphical grammars</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-data-types_graphical-marks_visual-encondings.html">2. Effective use of visual channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-visualization-concepts.html">3. Visualizing data distributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-eda.html">4. Exploratory data analysis (EDA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-communication-intro.html">5. Visualization for communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6-color-theory-and-application.html">6. Color theory and application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7-trendlines-confidence-intervals.html">7. Confidence intervals, figure layouts, and interactivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8-figure-composition.html">8. Figure formats, interactivity and paired comparisons</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">FAQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://altair-viz.github.io/">Altair documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://ggplot2.tidyverse.org/">ggplot documentation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://socviz.co/">Data visualization intro</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://clauswilke.com/dataviz/index.html">Fundamentals of data visualization</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lectures/faq.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>FAQ</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-1-intro-to-viz-ggplot-and-altair">Lecture 1 - Intro to viz, ggplot, and Altair</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2-visual-encodings-and-plot-config">Lecture 2 - Visual encodings and plot config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-3-visualization-concepts-and-eda">Lecture 3 - Visualization concepts and EDA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4-exploratory-data-analysis-and-distribution-plots">Lecture 4 - Exploratory data analysis and distribution plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-5-visualization-for-communication">Lecture 5 - Visualization for communication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-6-color-theory-and-application">Lecture 6 - Color theory and application</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-7-8-trendlines-and-figure-composition">Lecture 7 &amp; 8 - Trendlines and figure composition</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h1>
+<section id="lecture-1-intro-to-viz-ggplot-and-altair">
+<h2>Lecture 1 - Intro to viz, ggplot, and Altair<a class="headerlink" href="#lecture-1-intro-to-viz-ggplot-and-altair" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><blockquote>
+<div><p>How is matplotlib more low level than pandas?</p>
+</div></blockquote>
+<p>This categorization is specifically referring to how we use the syntax of each when making  a plot. With pandas we describe what we want to compare in our data, whereas with matplotlib we need to speak more in the context of the details of how to construct the plot. So one focuses on the data, and the other on the plot construction.</p>
+</li>
+<li><blockquote>
+<div><p>Could you tell a bit more about Patchworks/cowplot and why there isn’T a parallel in the Python viz world?</p>
+</div></blockquote>
+<p>The same functionality is built-into most Python visualization libraries, so there is no need for a separate package. We will see some examples later in the course.</p>
+</li>
+<li><blockquote>
+<div><p>Why are we not use altair in both languages?</p>
+</div></blockquote>
+<p>While altair has some nice features such as interactivity and is available in both Python and R, ggplot is the most established grammar of graphics library across both languages. This means that ggplot has some plots things that altair does not,</p>
+</li>
+<li><blockquote>
+<div><p>Can we change the colour scheme as well?</p>
+</div></blockquote>
+<p>Yes, the default ones are already well chosen but we will get into details of this later.</p>
+</li>
+<li><blockquote>
+<div><p>Could you pls elaborate how R is running using the python kernel?</p>
+</div></blockquote>
+<p>You don’t need to know this for a quiz, but essentially an R kernel is spun up in the background by rpy2 and all the code written into cells starting with <code class="docutils literal notranslate"><span class="pre">%%R</span></code> is sent to the R kernel, and then the output is sent back to Python and the notebook.</p>
+</li>
+<li><p>What’s the difference btw defining size in aes and defining size in geom_point?</p>
+<p><code class="docutils literal notranslate"><span class="pre">aes</span></code> maps a column in a data to a suitable range of sizes so points will be of different size. Setting it in <code class="docutils literal notranslate"><span class="pre">geom_point</span></code> sets all the points to the same size.</p>
+</li>
+<li><blockquote>
+<div><p>Is aes() a function? We can access it globally?</p>
+</div></blockquote>
+<p>Yes, it is from <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>. You can use it inside a geom as well, but we will focus on using it inside the <code class="docutils literal notranslate"><span class="pre">ggplot()</span></code> call.</p>
+</li>
+<li><blockquote>
+<div><p>do some of the parameters (like shape) only work well with categorical variables</p>
+</div></blockquote>
+<p>Yes, it does not make sense to encode a numerical columns as the shape aesthetic, because there is no inherent order between shapes. Is circles bigger or smaller than star for example? They are just different, not ordered.</p>
+</li>
+<li><blockquote>
+<div><p>Should we read the book you’ve mentioned? Is the key text Fundamentals of Data Viz as opposed to Viz Analysis and Design?</p>
+</div></blockquote>
+<p>I will explicitly mention any mandatory reading material in the lecture notes. You should read the lecture notes and this material. There will also be optional reference links as well as general resource in the readme which you can read if you want.</p>
+</li>
+<li><blockquote>
+<div><p>when plotting mean summary statistic in ggplot, it looks like the wrangling/transformation part is done in geom, whereas in altair, the wrangling is done as part of esthetic encoding.</p>
+</div></blockquote>
+<p>Correct, this is a slight difference in the grammar the two langauge use. Altair says “plot the mean value of column X and represent it with a point” whereas ggplot says “plot column X and represent it with a point of the mean value”.</p>
+</li>
+<li><blockquote>
+<div><p>Usually how do we decide which kind of plot should we use?</p>
+</div></blockquote>
+<p>We will talk about this when we discuss exploratory exploration in week 2.</p>
+</li>
+<li><blockquote>
+<div><p>can you please break down the arguments for geom_line like what does stat do?</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">stat</span></code> gives you the option to represent a summary statistics instead of the raw value of the points (called the <code class="docutils literal notranslate"><span class="pre">identity</span></code> in ggplot). It is like the functions <code class="docutils literal notranslate"><span class="pre">'mean'</span></code> etc in altair. There is a brief explanation and good link in the lecture notes.</p>
+</li>
+<li><blockquote>
+<div><p>Any benefit of using geom_line() vs stat_summary() or are they just doing the same thing via different syntax?</p>
+</div></blockquote>
+<p>The same, I think using the <code class="docutils literal notranslate"><span class="pre">geom_</span></code> syntax is more consistent and have updated the lecture notes to reflect that.</p>
+</li>
+<li><blockquote>
+<div><p>How can we keep track on what we should quote? i.e.: Python - ‘mean(Miles_per_Gallon)’ R - ‘line’ and ‘summary’</p>
+</div></blockquote>
+<p>In general, you need to quote column names in Python but not in R. You often need to quote and argument, such ‘summary’ or ‘mean’, but some parameters accept a function directly without quotes, so it depends on the function you are calling.</p>
+</li>
+<li><blockquote>
+<div><p>Are the lectures demos in the student repo?</p>
+</div></blockquote>
+<p>Yes, all code is in the lecture notes.</p>
+</li>
+</ol>
+</section>
+<section id="lecture-2-visual-encodings-and-plot-config">
+<h2>Lecture 2 - Visual encodings and plot config<a class="headerlink" href="#lecture-2-visual-encodings-and-plot-config" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><blockquote>
+<div><p>For the color scale change example, why was there a change in the correct analysis? Not sure why the second color scale was better.</p>
+</div></blockquote>
+<p>The rainbow color scale is noisy and lacks a clear progression (blu cyan green yellow red purple). The default ones in Altair and Python have continuous mappings. The one in the image also highlighted trouble areas in red instead of darkblue as the old colorscheme and without any other colors that stand out (black grey white). We will talk more about this later, this is a good resource <a class="reference external" href="https://mycarta.wordpress.com/2012/10/06/the-rainbow-is-deadlong-live-the-rainbow-part-3/">https://mycarta.wordpress.com/2012/10/06/the-rainbow-is-deadlong-live-the-rainbow-part-3/</a> and so is this <a class="reference external" href="https://clauswilke.com/dataviz/color-basics.html">https://clauswilke.com/dataviz/color-basics.html</a>.</p>
+</li>
+<li><blockquote>
+<div><p>Are colour scales constant across cultures?</p>
+</div></blockquote>
+<p>If you want to delve into this, you can read <a class="reference external" href="https://en.wikipedia.org/wiki/Linguistic_relativity_and_the_color_naming_debate">this wiki article about linguistic relativity and color naming across culture</a>. If you don’t have time for that I can summarize at least the linguistic relativity part by saying that it is debated =) From what I recall (without rereading again so correct me if I’m wrong) the strong version of the linguigstic relativity hypothesis (that the differential availability of words in languages directly impacts how people of different nationalities think) is largely disproven, but there might still be an influential factor rather than a directly determining one. I am not an expert on this, the move “Arrival” contextualizes this hypothesis with aliens.</p>
+</li>
+<li><blockquote>
+<div><p>I always hear bad things about 3D charts. Is there ever a reason to use a 3D chart over 2D?</p>
+</div></blockquote>
+<p>Yes, there can be. The biggest issues with using 3D is when it is usd unnecessarily (like a 3D bar or pie chart), as the only way to compare position (like a 3D scatter plot), and when they are represented on a 2D medium like a paper where they can’t be rotated. Sometimes 3D can be useful, like a topographical map or a protein folding visualization. But be cautious, we saw today that even in naturally 3D systems like blood vessels it is still mentally more complex when they are 3D. Claus Wilke’s has a good chapter on this <a class="reference external" href="https://clauswilke.com/dataviz/no-3d.html">https://clauswilke.com/dataviz/no-3d.html</a> that I will add to the lecture notes also.</p>
+<p>There is also some very interesting work done with the Rayshader library that maps 3D in an intuitive way and incorporates reasonable rotation of the objects. I will paste two GIFs here and you can read more at <a class="reference external" href="https://www.tylermw.com/3d-ggplots-with-rayshader/">https://www.tylermw.com/3d-ggplots-with-rayshader/</a> (I don’t know of research on this, but he makes valid points in his discussion at the end, and the viz look really neat). Especially in the space time plot, I do think the third dimension adds value.</p>
+</li>
+</ol>
+<p><img alt="output" src="https://media.github.ubc.ca/user/1751/files/9e1aba80-0fd3-11eb-8d50-4af498eb7886" /></p>
+<hr class="docutils" />
+<p><img alt="output2" src="https://media.github.ubc.ca/user/1751/files/da4e1b00-0fd3-11eb-940d-0b06a28a0186" /></p>
+<ol class="arabic">
+<li><blockquote>
+<div><p>why 2d is better than 3d?</p>
+</div></blockquote>
+<p>2D does not suffer from the problems mentioned above and are often less demanding cognitively,
+so more acessible to non-experts.</p>
+</li>
+<li><blockquote>
+<div><p>So area chart is less effective than line when we want to illustrate the difference?</p>
+</div></blockquote>
+<p>Yes, it is easier to compare lines since they all have the same baseline. Comparing and area on the top of the area chart versus the bottom can be particularly hard since they are far from each other.</p>
+</li>
+<li><blockquote>
+<div><p>So area chart is less effective than line when we want to illustrate the difference?</p>
+</div></blockquote>
+<p>Yes, the area is good when you want to show the total and the difference. The line is better for difference only.</p>
+</li>
+<li><blockquote>
+<div><p>how do we reorder the area chart in altair?</p>
+</div></blockquote>
+<p>You can sort in ascending/descending order via the <code class="docutils literal notranslate"><span class="pre">order</span></code> parameter as in this example <a class="reference external" href="https://altair-viz.github.io/gallery/stacked_bar_chart_sorted_segments.html">https://altair-viz.github.io/gallery/stacked_bar_chart_sorted_segments.html</a>. For a custom categorical order, it is currently not possible (<a class="github reference external" href="https://github.com/vega/vega-lite/issues/1734">vega/vega-lite#1734</a>). The workaround is to create an additional column mapping the categories to numbers in the order you want, and then sort by that column (you can use <code class="docutils literal notranslate"><span class="pre">.map</span></code> in pandas with a dictionary for this).</p>
+</li>
+<li><blockquote>
+<div><p>I see that R and Python have powerful visualization capabilities, I wonder what’s the added value of the other visualization tools such as Tableau, Power BI, and Spotfire?</p>
+</div></blockquote>
+<p>Many of these graphical dashboard solution can be quick to pick up for people not used to programming and also offer nice interfaces for interactive exploration of data, at least for simpler relationships. However, they don’t have the same flexibility, automation possibilities, scalability and reproducibility qualities as when pro-grammatically generating plots. These pros and cons are similar across other programs also, like using excel vs pandas/dplyr.</p>
+<p>Depending on which type of job you are getting, it is possible that you might end up using a dashboard software like this, but it is probably more likely that you end up building custom visualizations and dashboards for you team using the tools we cover to look at exactly what you want instead of a less customizable interface. There is course related to MDS that offers <a class="reference external" href="https://hfboyce.github.io/tableau_course/intro.html">an introduction to Tableau for those interested</a>. There are also <a class="reference external" href="https://youtu.be/jEfLC1w_oww">new software such as Mode</a> that offers a combination of notebooks and dashboarding in the same interface.</p>
+</li>
+<li><blockquote>
+<div><p>If we want to change dates in python from [1918-01-01] to [1918], do we change the date to period?</p>
+</div></blockquote>
+<p>You can do <code class="docutils literal notranslate"><span class="pre">df['col'].dt.year</span></code> to extract year from a date.</p>
+</li>
+<li><blockquote>
+<div><p>Can you elaborate on the geom_* arguments? For example, what other options exist for stat = ‘blank’ and why we need to have this.</p>
+</div></blockquote>
+<p>The default for <code class="docutils literal notranslate"><span class="pre">stat</span></code> is <code class="docutils literal notranslate"><span class="pre">'identity'</span></code> which means to have one mark per data point. For example one circle for each row in that column. If you want to create a summary or a count instead, you need to change <code class="docutils literal notranslate"><span class="pre">stat</span></code> similarly to how you add <code class="docutils literal notranslate"><span class="pre">'mean()'</span></code> in altair. So you say that you want a summary statistick and then which function you want to summarise by, more here <a class="reference external" href="https://stackoverflow.com/questions/38775661/what-is-the-difference-between-geoms-and-stats-in-ggplot2/44226841#44226841">https://stackoverflow.com/questions/38775661/what-is-the-difference-between-geoms-and-stats-in-ggplot2/44226841#44226841</a></p>
+</li>
+<li><blockquote>
+<div><p>How it knows to sum on y axis not on x axis?</p>
+</div></blockquote>
+<p>In this case there is only one relevant axis to sum on (only one numerical one). See the link in the next question to read more exactly about how sum works.</p>
+</li>
+<li><blockquote>
+<div><p>Can we use custom functions in the fun argument? If yes, how should those functions behave (return types, args)?</p>
+</div></blockquote>
+<p>Yes, it can be anything that behaves similarly to mean, sum, std etc, so returns one value. If you use <code class="docutils literal notranslate"><span class="pre">fun.data</span></code> it can even return multiple values, e.g. the default is <code class="docutils literal notranslate"><span class="pre">mean_se</span></code> which returns mean and standard error, more here <a class="reference external" href="https://ggplot2.tidyverse.org/reference/stat_summary.html">https://ggplot2.tidyverse.org/reference/stat_summary.html</a></p>
+</li>
+<li><blockquote>
+<div><p>How can we change value on y axis to supress scientific notation and show the full numbers instaed?</p>
+</div></blockquote>
+<p>You can use the tidyverse scales library <a class="reference external" href="https://scales.r-lib.org/">https://scales.r-lib.org/</a> which allows you to do <code class="docutils literal notranslate"><span class="pre">scale_x_log10(labels</span> <span class="pre">=</span> <span class="pre">comma)</span></code></p>
+</li>
+<li><p>So what did alt.X do on its own? Nothing?</p>
+<p>Yup. <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">'col'</span></code> is a shortcut for <code class="docutils literal notranslate"><span class="pre">alt.X('col')</span></code> so they do the same thing.</p>
+</li>
+<li><blockquote>
+<div><p>Which method of searching for 2018 would be better in terms of big-O notation? 🧐</p>
+</div></blockquote>
+<p>For a df &gt; 200,000 rows, query is a bit faster, otherwise the Python versus is a bit faster. No big differences. <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#performance-of-query">https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#performance-of-query</a></p>
+</li>
+<li><blockquote>
+<div><p>why do we need the ‘’ quotation marks around the <code class="docutils literal notranslate"><span class="pre">count()</span></code> function?</p>
+</div></blockquote>
+<p>In Altair, you quote the function you use and then altair evaluates the entire string with function and column name (similar to how pandas query evaluates a string expression). The function are javascript functions so they are run in javascript rather than in Python, which is part of the reason you quote them.</p>
+</li>
+<li><blockquote>
+<div><p>can we use any JavaScript function within quotation marks or we are limited to some set of available functions?</p>
+</div></blockquote>
+<p>Technically is anything that vega-lite supports <a class="reference external" href="https://vega.github.io/vega-lite/docs/">https://vega.github.io/vega-lite/docs/</a>, which I believe is most common javascript function, but I could not find a complete reference.</p>
+</li>
+<li><blockquote>
+<div><p>I’m just reading up the documentation, and it turns out add_count() can do the group_by implicitly, so instead of 2 separate lines, we could’ve written it as add_count(region). Let me know if there’s any flaw in my understanding here. Thanks.</p>
+</div></blockquote>
+<p>You are correct! I am used to doing the group by explicitly so I guess I got stuck in that, thanks for improving the lecture notes!</p>
+</li>
+<li><blockquote>
+<div><p>so <code class="docutils literal notranslate"><span class="pre">add_count()</span></code> automatically added a count column with default col_name n right?</p>
+</div></blockquote>
+<p>Correct.</p>
+</li>
+<li><blockquote>
+<div><p>What does columns = 3 in facet do? Seems like there are many more columns than 3..</p>
+</div></blockquote>
+<p>It refers to the number of columns in the grid of subplots that is created, not the columns in the data frame.</p>
+</li>
+<li><blockquote>
+<div><p>Can we add the interactiveness to R plots as we did with Altair?</p>
+</div></blockquote>
+<p>Yes, but it is not built into ggplot. You need to instal <code class="docutils literal notranslate"><span class="pre">plotly</span></code> for R and then use the <code class="docutils literal notranslate"><span class="pre">ggplotly</span></code> function. We will talk about this mostly in the next viz course, but you can see and example here <a class="reference external" href="https://plotly.com/ggplot2/geom_bar/">https://plotly.com/ggplot2/geom_bar/</a>.</p>
+</li>
+<li><blockquote>
+<div><p>why don’t we just use geom_histogram in R ?</p>
+</div></blockquote>
+<p>geom_histogram is a shorctut for geom_bar(stat = ‘bin’), so the output will be exactly the same. Using geom_histogram is a bit more common,  but please remember that there is nothing magical with this function. It is just geom_bar with a different default argument to stat.</p>
+</li>
+<li><blockquote>
+<div><p>can we add gaps between bars in ggplot just like in Altair?</p>
+</div></blockquote>
+<p>This is a philosophical question, is it a gap between bars or a line on top of the bars? Luckily, it doesn’t matter for our perception, and we can add lines by setting the <code class="docutils literal notranslate"><span class="pre">color</span></code> argument of the geom itself. I have updated the lecture notes to use this so you can see examples there.</p>
+</li>
+<li><blockquote>
+<div><p>Can we add multiple col name values in the tooltip?</p>
+</div></blockquote>
+</li>
+<li><blockquote>
+<div><p>quick question on python formatting.. should we have space between for example x=2?  should it be x = 2?</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span><span class="p">(</span><span class="n">Python</span><span class="o">=</span><span class="s1">&#39;this&#39;</span><span class="p">)</span>
+<span class="n">fun</span><span class="p">(</span><span class="n">R</span> <span class="o">=</span> <span class="s1">&#39;this&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><blockquote>
+<div><p>is alt.Size(‘pop_density’) the same as size = “pop_density”?</p>
+</div></blockquote>
+<p>Correct.</p>
+</li>
+<li><blockquote>
+<div><p>and why do we use scale = alt.Scale() instead of just alt.Scale()? What would be a good rule of thumb when to add sth = alt.Sth?</p>
+</div></blockquote>
+<p>They are equivalent. The only reason I use scale = alt.Scale() is that it is not possible to mix them IF you have a positional argument after a keywoard argument. This has nothing o do with altair but is the case for all python functions.
+Since that might get confusing, I kept it as <code class="docutils literal notranslate"><span class="pre">scale</span> <span class="pre">=</span> <span class="pre">alt.Scale</span></code>.
+As an example, I cannot write <code class="docutils literal notranslate"><span class="pre">fun(x=5,</span> <span class="pre">3)</span></code>, but I can write <code class="docutils literal notranslate"><span class="pre">fun(5,</span> <span class="pre">y=3)</span></code>. If you’re comfortable with this, you can use either.</p>
+</li>
+</ol>
+</section>
+<section id="lecture-3-visualization-concepts-and-eda">
+<h2>Lecture 3 - Visualization concepts and EDA<a class="headerlink" href="#lecture-3-visualization-concepts-and-eda" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><blockquote>
+<div><p>for the density graph, you said it will centre a bin on top of each point and then if two bins overlap they will sum up. Do we specify the width then of these bins or is there a standard for that?</p>
+</div></blockquote>
+<p>TLDR: You can, but the default width is good.</p>
+<p>Which is the optimal width for a kernel estimate is often estimated based on the amount of data. Exactly how to estimate it is a decades long discussion with many ideas (e.g. <a class="reference external" href="https://d-nb.info/104355470X/34">here is an 111 pages long doctoral thesis on the topic</a>). I recommend reading <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html">the documentation on KDEs in SciPy</a> for an overview of the common rule’s of thumb that are usually used. Jake VanderPlas (core developer of Altair, Scikit-learn and SciPy, yup pretty astonishing…) has <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/05.13-kernel-density-estimation.html#Selecting-the-bandwidth-via-cross-validation">a nice write-up on estimating the bandwidth via cross-validation</a> (you will learn about cross-validations in other similar contexts in MDS).</p>
+</li>
+<li><blockquote>
+<div><p>is it possible for box plot to show outliers and maybe violin plot cannot?</p>
+</div></blockquote>
+<p>Technically, violin plots can. You could stop the violin before the outliers and the plot them separately, or just plot them on top of the violin.</p>
+</li>
+<li><blockquote>
+<div><p>it’s there good use case rule when to plot the violin graphs vertically or horizontally? I wonder if it has something to do with the number of values in the x variables?</p>
+</div></blockquote>
+<p>The rule is that you want the labels to be easy to read, so for all plots with long categorical labels, it is usually easier if they are on the y-axis. When density traces / KDEs are plotted, they are usually horizontal and overlapping with each other so that you can fit more of them. It is especially useful when you have gradually changes values between categories like in temperature over the months:</p>
+<p><img alt="image" src="https://media.github.ubc.ca/user/1751/files/b442b680-1304-11eb-929a-f21c2eabe5f0" /></p>
+</li>
+<li><blockquote>
+<div><p>In what situation(s) will we prefer box plot over violin, only when we need the plot to show 5 values? Why are we focusing on making only boxplots in Altair and not the violin one?</p>
+</div></blockquote>
+<p>Generally violin plots are preferable, so when using a box, it can be a good idea to plot the values on top as dots. However, if you have lots of categorical variables and you want to make one box/violin for each, boxes can be easier to interpret when they are really small, because the shape of the violing can be hard to see when small.</p>
+<p>With altair, there is a special case where violin and density plots right now don’t work well with several categorical values on one axis, which is why we are using boxes there for the time being. This is a feature that the altair team is looking to implement.</p>
+</li>
+<li><blockquote>
+<div><p>Also are we going to also be making boxplots in ggplot as well?</p>
+</div></blockquote>
+<p>Use <code class="docutils literal notranslate"><span class="pre">geom_boxplot</span></code>.</p>
+</li>
+<li><blockquote>
+<div><p>What’s the advantage of having a mirrored density plot as opposed to just the density plot?</p>
+</div></blockquote>
+<p>I personally don’t experience any direct advantage, but in <a class="reference external" href="https://www.tandfonline.com/doi/epdf/10.1080/00031305.1998.10480559?needAccess=true">the 1998 paper where violin plots were introduced</a>, the authors explicitly designed it as a density trace + a small boxplot. Although violinplots nowadays don’t always include the middle box plot, it might have been part of the decision to make the density trace symmetrical (maybe also because all their plots are of vertical violins):</p>
+<p><img alt="image" src="https://media.github.ubc.ca/user/1751/files/dd177b80-1305-11eb-802b-a6ff0ba54825" /></p>
+<p>The authors also claim it is easier to perceive density differences with symmetrical curves but I don’t know of a study that has tested this:</p>
+<blockquote>
+<div><p>The density trace is plotted symmetrically to the left and the right of the (vertical) box plot. There is no difference in these density traces other than the direction in which they extend. Adding two density traces gives a symmetric plot which makes it easier to see the magnitude of the density. This hybrid of the density trace and the box plot allows quick and insightful comparison of several distributions.</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="lecture-4-exploratory-data-analysis-and-distribution-plots">
+<h2>Lecture 4 - Exploratory data analysis and distribution plots<a class="headerlink" href="#lecture-4-exploratory-data-analysis-and-distribution-plots" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><blockquote>
+<div><p>when different color bars are stacked on top of each other - how do we interpret it?</p>
+</div></blockquote>
+<p>You need to compare the length of the bars, which is tricky and this is not a great visualisation choice. It is better if you can stack them on the same baseline.</p>
+</li>
+<li><blockquote>
+<div><p>Is it possible to do explode on a list of columns like .explode([‘country’, ‘’genres])?</p>
+</div></blockquote>
+<p>No, just one at a time.</p>
+</li>
+<li><blockquote>
+<div><p>Don’t you need to add .interactive() to be able to mouse over points in altair?</p>
+</div></blockquote>
+<p>In general yes, but boxplots add it by default.</p>
+</li>
+<li><blockquote>
+<div><p>Why do the function calls in Altair documentation repeat “undefined” for each argument?</p>
+</div></blockquote>
+<p>I think it is the javascript default for “None” as it would be called in python. Some of altairs API documentation is autmatically generated from the vegalite javascript code.</p>
+</li>
+<li><blockquote>
+<div><p>Is the “bw” argument in ggplot comparable to “step” in altair in terms of the graph style?</p>
+</div></blockquote>
+<p>No, <code class="docutils literal notranslate"><span class="pre">bw</span></code> is how wide each gaussian kernel is, whereas <code class="docutils literal notranslate"><span class="pre">step</span></code> refers to the resolution used to create the kernel grid. There is more info in the KDE links from last Q&amp;A.</p>
+</li>
+<li><blockquote>
+<div><p>Are there any good cheat sheets for altair/ ggplot?</p>
+</div></blockquote>
+<p><a class="reference external" href="https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">ggplot is here</a>. For Altair, I am happy to create one with you and try to contribute it to the Altair docs. There are templates we can use similar to the ggplot one (maybe just the first page), so far two students are interested and I am thinking 2-4 would be a good number. Let me know and I will reach out, let’s try to this at a time it does not affect your studying (it will probably take more time than you think designing things).</p>
+</li>
+<li><blockquote>
+<div><p>Why is the number of bins I get not exactly the one i specify with <code class="docutils literal notranslate"><span class="pre">maxbins</span></code> in Altair histograms?</p>
+</div></blockquote>
+<p>TLDR: <code class="docutils literal notranslate"><span class="pre">maxbins</span></code> gives you a rough indication which is good enough, but if you want it to be exact you can use <code class="docutils literal notranslate"><span class="pre">step</span></code> instead (similar to <code class="docutils literal notranslate"><span class="pre">binwidth</span></code> in ggplot).</p>
+<p>This is a good observation and something that I have been meaning of looking into. I went on a treasure hunt right now to find the answer and my understanding is that this stems from an implementation detail all the way down in D3 (remember altair is the python implementation of vegalite, which is a javascript library that sits on top of vega which in turn sits on top of D3 which is the most used visualization library on the web).</p>
+<p>I believe that the answer is what you can find in this observable notebook (similar to Jupyter notebooks, but for Javascript) where it says:</p>
+<blockquote>
+<div><p>The result is not guaranteed to yield the exact number of buckets we asked for. That number is only an indication, passed to the threshold generator. As you change that value with the slider, you might notice the reason why this happens: the domain gets sliced at “nicely-rounded” values — using d3.ticks — and these rounded values do not fall exactly on the bin’s domain.</p>
+</div></blockquote>
+<p>If you open up that notebook you can play around with the slider and see how the bins change.</p>
+</li>
+<li><blockquote>
+<div><p>When we explode twice in a chain, aren’t we overcounting? Because we get the Cartesian product of genres and studios</p>
+</div></blockquote>
+<p>It depends on the question. You need to explode all the categories that you will spread your data over in the visualization/observation counting (by coloring, faceting, etc). For example, consider the situation where you are in charge of creating the multiverse and you have compiled your proposed universes into the following table for presentation in front of the bureau of multiverse instantiation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">large_explosions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;multiverse&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;Beta&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;laws&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;gravity&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="s1">&#39;gravity&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;planets&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;Neptune&#39;</span><span class="p">,</span> <span class="s1">&#39;Venus&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Poseidon&#39;</span><span class="p">,</span> <span class="s1">&#39;Aphrodite&#39;</span><span class="p">]]})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">large_explosions</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>    <span class="o">|</span> <span class="n">multiverse</span>   <span class="o">|</span> <span class="n">laws</span>                <span class="o">|</span> <span class="n">planets</span>                   <span class="o">|</span>
+<span class="o">|---</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">-------------|</span><span class="p">:</span><span class="o">--------------------|</span><span class="p">:</span><span class="o">--------------------------|</span>
+<span class="o">|</span>  <span class="mi">0</span> <span class="o">|</span> <span class="n">A</span>            <span class="o">|</span> <span class="p">[</span><span class="s1">&#39;gravity&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">|</span> <span class="p">[</span><span class="s1">&#39;Neptune&#39;</span><span class="p">,</span> <span class="s1">&#39;Venus&#39;</span><span class="p">]</span>      <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">1</span> <span class="o">|</span> <span class="n">Beta</span>         <span class="o">|</span> <span class="n">gravity</span>             <span class="o">|</span> <span class="p">[</span><span class="s1">&#39;Poseidon&#39;</span><span class="p">,</span> <span class="s1">&#39;Aphrodite&#39;</span><span class="p">]</span> <span class="o">|</span>
+</pre></div>
+</div>
+<p>If the bureau asks you to present the number of planned universes that will include gravity, you would only need to explode a single column, and count the occurrences of <code class="docutils literal notranslate"><span class="pre">'gravity'</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">large_explosions</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="s1">&#39;laws&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>    <span class="o">|</span> <span class="n">universe</span>     <span class="o">|</span> <span class="n">laws</span>    <span class="o">|</span> <span class="n">planets</span>                   <span class="o">|</span>
+<span class="o">|---</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">-------------|</span><span class="p">:</span><span class="o">--------|</span><span class="p">:</span><span class="o">--------------------------|</span>
+<span class="o">|</span>  <span class="mi">0</span> <span class="o">|</span> <span class="n">A</span>            <span class="o">|</span> <span class="n">gravity</span> <span class="o">|</span> <span class="p">[</span><span class="s1">&#39;Neptune&#39;</span><span class="p">,</span> <span class="s1">&#39;Venus&#39;</span><span class="p">]</span>      <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">0</span> <span class="o">|</span> <span class="n">A</span>            <span class="o">|</span> <span class="n">time</span>    <span class="o">|</span> <span class="p">[</span><span class="s1">&#39;Neptune&#39;</span><span class="p">,</span> <span class="s1">&#39;Venus&#39;</span><span class="p">]</span>      <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">1</span> <span class="o">|</span> <span class="n">Beta</span>         <span class="o">|</span> <span class="n">gravity</span> <span class="o">|</span> <span class="p">[</span><span class="s1">&#39;Poseidon&#39;</span><span class="p">,</span> <span class="s1">&#39;Aphrodite&#39;</span><span class="p">]</span> <span class="o">|</span>
+</pre></div>
+</div>
+<p>However, if you were asked to instead demonstrate how many <em>planets</em> would be equipped with gravitational field, then you would need to explode both columns before counting the occurrences of <code class="docutils literal notranslate"><span class="pre">'gravity'</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">large_explosions</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="s1">&#39;laws&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="s1">&#39;planets&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span>    <span class="o">|</span> <span class="n">universe</span>     <span class="o">|</span> <span class="n">laws</span>    <span class="o">|</span> <span class="n">planets</span>   <span class="o">|</span>
+<span class="o">|---</span><span class="p">:</span><span class="o">|</span><span class="p">:</span><span class="o">-------------|</span><span class="p">:</span><span class="o">--------|</span><span class="p">:</span><span class="o">----------|</span>
+<span class="o">|</span>  <span class="mi">0</span> <span class="o">|</span> <span class="n">A</span>            <span class="o">|</span> <span class="n">gravity</span> <span class="o">|</span> <span class="n">Neptune</span>   <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">0</span> <span class="o">|</span> <span class="n">A</span>            <span class="o">|</span> <span class="n">gravity</span> <span class="o">|</span> <span class="n">Venus</span>     <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">0</span> <span class="o">|</span> <span class="n">A</span>            <span class="o">|</span> <span class="n">time</span>    <span class="o">|</span> <span class="n">Neptune</span>   <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">0</span> <span class="o">|</span> <span class="n">A</span>            <span class="o">|</span> <span class="n">time</span>    <span class="o">|</span> <span class="n">Venus</span>     <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">1</span> <span class="o">|</span> <span class="n">Beta</span>         <span class="o">|</span> <span class="n">gravity</span> <span class="o">|</span> <span class="n">Poseidon</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="mi">1</span> <span class="o">|</span> <span class="n">Beta</span>         <span class="o">|</span> <span class="n">gravity</span> <span class="o">|</span> <span class="n">Aphrodite</span> <span class="o">|</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="lecture-5-visualization-for-communication">
+<h2>Lecture 5 - Visualization for communication<a class="headerlink" href="#lecture-5-visualization-for-communication" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><blockquote>
+<div><p>The link in Q3 of the lab is not working</p>
+</div></blockquote>
+<p>It is missing an <code class="docutils literal notranslate"><span class="pre">l</span></code> in the end: <code class="docutils literal notranslate"><span class="pre">htm</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">html</span></code>.</p>
+</li>
+<li><blockquote>
+<div><p>For the color of our 2d histograms, can we set the count limit to something below the maximum we observed? Extreme max outliers drown out the color of the rest of our heatmap</p>
+</div></blockquote>
+<p>Yes you can set the color limit the same as for other continuous scales (<code class="docutils literal notranslate"><span class="pre">alt.Color(domain=(0,</span> <span class="pre">10))</span></code> or <code class="docutils literal notranslate"><span class="pre">scale_color_continuous(limits</span> <span class="pre">=</span> <span class="pre">c(0,</span> <span class="pre">10))</span></code>). Added similar material in the lecture notes.</p>
+</li>
+<li><blockquote>
+<div><p>What is the difference between a heatmap and a 2d histogram?</p>
+</div></blockquote>
+<p>A 2D histogram is a heatmap where the color is mapped to the count of observations in each bin.</p>
+</li>
+<li><blockquote>
+<div><p>Could you quickly elaborate on why we need to put <code class="docutils literal notranslate"><span class="pre">bin=alt.Bin(</span> <span class="pre">)</span></code> arguments in both <code class="docutils literal notranslate"><span class="pre">alt.X(</span> <span class="pre">)</span></code> and <code class="docutils literal notranslate"><span class="pre">alt.Y(</span> <span class="pre">)</span></code>, but not with ggplot?</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">geom_bin2d</span></code> does the binning automatically, just like <code class="docutils literal notranslate"><span class="pre">geom_histogram()</span></code>.</p>
+</li>
+<li><blockquote>
+<div><p>How do you reverse the colour of hexagons  Where lighter is lower counts and darker is higher counts (for ggplot)</p>
+</div></blockquote>
+<p>The same as for a continuous axis scale. Added detailed example to the lecture notes.</p>
+</li>
+<li><blockquote>
+<div><p>How does the expand parameter for ggplot’s continuous scales work exactly?</p>
+</div></blockquote>
+<p>I updated to use <code class="docutils literal notranslate"><span class="pre">expansion()</span></code> inside expand which sets the left and right side padding as a proporiton of the axis range, added details in the lecture notes. <a class="reference external" href="https://stackoverflow.com/questions/44170871/how-does-ggplot-scale-continuous-expand-argument-work">This SO thread has some more examples to understand this</a>.</p>
+</li>
+<li><blockquote>
+<div><p>With altair, is there ever a case where we put scale = to something other than alt.Scale(). I find it strange in general with altair that we need to specify a keyword bin for example and then another key word alt.Bin()</p>
+</div></blockquote>
+<p>Nope, it is redundant. <a class="reference external" href="https://github.com/altair-viz/altair/pull/1629">There is a proposal to add this sytax, which would be very neat:</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">mark_point</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;column:Q&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">zero</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;my title&#39;</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;color:N&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><blockquote>
+<div><p>How could we get rid of the decimal in the y-axis in Altair? Having it <span class="math notranslate nohighlight">\(19k instead of \)</span>19.0k</p>
+</div></blockquote>
+<p>Prefix with <code class="docutils literal notranslate"><span class="pre">~</span></code>, added example in the notes.</p>
+</li>
+<li><blockquote>
+<div><p>Is there a guideline for what to put in axis label vs how to format the numbers. For example: labeling the axis with (<span class="math notranslate nohighlight">\() rather than putting a \)</span> in front of every number</p>
+</div></blockquote>
+<p>It depends on how busy the figure is. With lots of axis ticks it might be too much to have <code class="docutils literal notranslate"><span class="pre">$</span></code> on everyone. But no hard rule.</p>
+</li>
+<li><blockquote>
+<div><p>Is there a way to put one single title for the repeats? When I tried to add in labs, I did not have time to explore, the usual way adds to all subtitles .</p>
+</div></blockquote>
+<p>Add <code class="docutils literal notranslate"><span class="pre">title='Your</span> <span class="pre">title'</span></code> inside <code class="docutils literal notranslate"><span class="pre">.repeat()</span></code></p>
+</li>
+<li><blockquote>
+<div><p>In ggplot, what is the difference between “+ggtitle(“xxxxx”)” and “+labs(title=“xxxxx”)”? Or are they the same for creating titles?</p>
+</div></blockquote>
+<p>Same thing, different names.</p>
+</li>
+<li><blockquote>
+<div><p>what does <code class="docutils literal notranslate"><span class="pre">ticks</span></code> refer to in <code class="docutils literal notranslate"><span class="pre">theme(axis.ticks.x=element_blank(</span> <span class="pre">))</span></code>?</p>
+</div></blockquote>
+<p>The step on each axis, often as a small bar perpendicular to the axis itself.</p>
+</li>
+<li><blockquote>
+<div><p>Is there a way to change the default alt.Color color similar to alt.themes.enable()?</p>
+</div></blockquote>
+<p>Only via creating a custom theme and setting that as the default theme. I will try to cover this, probably last week.</p>
+</li>
+<li><blockquote>
+<div><p>For axis value, how do we set value interval? e.g.(5k: 0, 5k, 10k, etc) instead of 1k interval.</p>
+</div></blockquote>
+<p>Added details in notes on how to control the number of ticks / the interval between them.</p>
+</li>
+</ol>
+</section>
+<section id="lecture-6-color-theory-and-application">
+<h2>Lecture 6 - Color theory and application<a class="headerlink" href="#lecture-6-color-theory-and-application" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><blockquote>
+<div><p>For heat maps I’ve noticed that the highest value is usually the lightest colour, wouldn’t it make more sense to have it be the darkest colour (dark = highest concentration)?</p>
+</div></blockquote>
+<p>It often makes sense to have the highest value the most distinct from the background and/or NaN values, so if you have a white background I agree that making the highest values lighter often is a good idea. You can also make the lowest values the darkest if you want to highlight those instead, but I would be consistent if you are making multiple visualisations and not switch between plots if it can be avoided.</p>
+</li>
+<li><blockquote>
+<div><p>When the points have some transparency to them, overlapping points look darker, giving the illusion of a different value. Is there a way to solve this?</p>
+</div></blockquote>
+<p>You could set the opacity to be lower (alpha to be higher), but this would introduce the issue of points hiding each other. When using color as a rough indicator of values (what we usually do) and/or using color schemes that transition in the hue a bit, this issue is less important.</p>
+</li>
+<li><blockquote>
+<div><p>I find help documentation does not come up very much in R/Jupyter lab for graphing. For example, how would you go about finding out that alt.Scale is an argument for our encoding variables, and that alt.Scale can take arguments like range = … or scheme = … ?  What do you recommend we do to search?</p>
+</div></blockquote>
+<p>When you type <code class="docutils literal notranslate"><span class="pre">alt.X</span></code>, you should be able to view its docstring in the contextual help or via <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Tab</span></code>. There you will see that <code class="docutils literal notranslate"><span class="pre">scale</span></code> is a parameter and that its type is of class “scale” which is referring to <code class="docutils literal notranslate"><span class="pre">alt.Scale</span></code>.</p>
+<p>Sometimes the help isn’t detected correctly, but this has gotten much better in later IPython version I find. So if it does not show up, check that you have =&gt; version 7.15 of IPython, or use <code class="docutils literal notranslate"><span class="pre">?alt.X</span></code> in a new cell. The help in the pop up dialog can be a bit annoying to read because of the word wrap splitting the lines in an unfortunate way. I actually PRed this a few weeks ago and <a class="reference external" href="https://github.com/jupyterlab/jupyterlab/pull/9134">you can see how the bigger pop up help dialog will look in JL 3.0 here.</a></p>
+</li>
+<li><blockquote>
+<div><p>So for x=”year:0” is it 0 or o cus it is for ordinal variable?</p>
+</div></blockquote>
+<p>Yes. We could have changed the dtype in pandas to categorical, but here I am showing you how to do it with altair. I will talk more about this next week.</p>
+</li>
+<li><blockquote>
+<div><p>Annotation is good for static charts but not for dynamic charts where data is from a database for example and varies, is there a way to make annotations also dynamic ?</p>
+</div></blockquote>
+<p>I think you would need both your graphical chart elements and text to update for streaming data, so this would be a problem with both or neither (the text annotation would not be the bottleneck). You could also use tooltips when hovering over the bars.</p>
+</li>
+<li><blockquote>
+<div><p>Is there an order we need to follow, like write <code class="docutils literal notranslate"><span class="pre">geom_text</span></code> first then <code class="docutils literal notranslate"><span class="pre">geom_bar</span></code>?</p>
+</div></blockquote>
+<p>The order you write them in determines which ones shows up on top in the plot (sometimes called z-order, think of geoms and marks as layers put on top of each other).</p>
+</li>
+<li><blockquote>
+<div><p>What if there are several legends (color,size,shape), and I only want to delete the color legend?</p>
+</div></blockquote>
+<p>In Altair, you can pass <code class="docutils literal notranslate"><span class="pre">legend=None</span></code> to a specific encoding to exclude just that one from the legend (will not work if the encodings are merged in the legend). For most geoms, there is a <code class="docutils literal notranslate"><span class="pre">show.legend</span></code> argument you can use to turn specific legends off if you have more than one (Thanks Raf!).</p>
+</li>
+<li><blockquote>
+<div><p>This annotation syntax seems more complicated than Excel…</p>
+</div></blockquote>
+<p>:scream: :scream: :scream: I added an example in the the lecture notes with using <code class="docutils literal notranslate"><span class="pre">alt.Value</span></code> which is simpler than using the dataframe, but not quite as flexible (although should cover most situations where you only need to annotate a single value). Rafael also gave a tip to look at the extensions ggrepel and directlabel for ggplot.</p>
+</li>
+<li><blockquote>
+<div><p>How about when you want to keep one grid line for example X axis  gridline and delete the other one, instead of major and minor?</p>
+</div></blockquote>
+<p>You can use for example <code class="docutils literal notranslate"><span class="pre">panel.grid.major.x</span></code> in ggplot. For altair you set it in the encoding for that relevant axis.</p>
+</li>
+<li><blockquote>
+<div><p>What are the shortcuts you use for quickly deleting text and stuff like that? I would love to see a cheatsheet of your favourite jupyter lab editor shortcuts (and custom shortcuts)!</p>
+</div></blockquote>
+<p>For text editing I am using the <a class="reference external" href="https://github.com/axelfahy/jupyterlab-vim">Jupyter Lab vim addon</a> (it will become part of core JL in 3.1). Vim is a wonderful place, but I would only visit if you have time to spare, since it is quite time consuming to learn. Essentially it is a grammar for editing text the same way altair/ggplot are grammars for creating graphics. If I want to Delete A Sentence, I type <code class="docutils literal notranslate"><span class="pre">das</span></code>. If I want to Change text Inside a parenthesis, I type <code class="docutils literal notranslate"><span class="pre">ci(</span></code>. I think you can be similarly fast with conventional bindings, but it is not as fun ;)</p>
+</li>
+</ol>
+</section>
+<section id="lecture-7-8-trendlines-and-figure-composition">
+<h2>Lecture 7 &amp; 8 - Trendlines and figure composition<a class="headerlink" href="#lecture-7-8-trendlines-and-figure-composition" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><blockquote>
+<div><p>Could you elaborate on when we would want to use moving average, loess, and linear/polynomial/etc regression?</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>If it is important that the line has values that are easy to interpret, choose a rolling mean. These are also the most straightforward trendlines when communicating data to a general audience.</p></li>
+<li><p>If you think a simple line equation (e.g. linear) describes your data well, this can be advantageous since you would know that your data follows a set pattern, and it is easy to predict how the data behaves outside the values you have collected (of course still with more uncertainty the further away from your data you predict).</p></li>
+<li><p>If you are mainly interested in highlighting a trend in the current data, and the two situations described above are not of great importance for your figure, then a loess line could be sutiabe. It has the advantage that it describes trends in data very “naturally”, meaning that it highlights patterns we would tend to highlight ourselves in qualitative assessment. It also less strict in its statistical assumption compared to e.g. a linear regression, so you don’t have to worry about finding the correct equation for the line, and assessing whether your data truly follows that equation globally.</p></li>
+</ul>
+</li>
+<li><blockquote>
+<div><p>How to interpret the ci of a regression line?</p>
+</div></blockquote>
+<p>It is the same principle as the CI of the mean and calculated for the coefficients rather than being bootstrapped. You don’t need to details around this for 531, but if you are interested you can <a class="reference external" href="https://www.econometrics-with-r.org/5.2-cifrc.html">read about it more here</a>.</p>
+</li>
+<li><blockquote>
+<div><p>Is it be better to use both color and e.g. line thickness or highlight a feature versus using one of the two.</p>
+</div></blockquote>
+<p>It depends on your application, but such double encoding can be helpful although it might seem redundant at first. For example, encoding the count of observations as both the color and the size of a circle in a dotplot can further enhance the differences between different counts. Encoding groups membership as both the color and shape of dots helps to distinguish them further and is friendlier for anyone with color vision deficiency.</p>
+</li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="8-figure-composition.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Figure formats, interactivity and paired comparisons</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-1-intro-to-viz-ggplot-and-altair">Lecture 1 - Intro to viz, ggplot, and Altair</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-2-visual-encodings-and-plot-config">Lecture 2 - Visual encodings and plot config</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-3-visualization-concepts-and-eda">Lecture 3 - Visualization concepts and EDA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-4-exploratory-data-analysis-and-distribution-plots">Lecture 4 - Exploratory data analysis and distribution plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-5-visualization-for-communication">Lecture 5 - Visualization for communication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-6-color-theory-and-application">Lecture 6 - Color theory and application</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-7-8-trendlines-and-figure-composition">Lecture 7 &amp; 8 - Trendlines and figure composition</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Joel Ostblom
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
